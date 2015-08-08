@@ -1,18 +1,19 @@
-
-
+<html><head><title>jonathan</title></head><body><p>
+</p><p>
+</p><p>
 /* Chip's random ooze continent generation program */
-
+</p><p>
 /* for documentation, follow this link... */
-
+</p><p>
 /* for output, follow this link... */
-
+</p><p>
 #include <stdio.h>
-
+</p><p>
 #define elif else if
-
+</p><p>
 char string[] = " \177";
 int screen[60][80];
-
+</p><p>
 main (ac, av)
   int ac;
   char *av[];
@@ -20,7 +21,7 @@ main (ac, av)
   int showevery;
   int times;
   int i;
-
+</p><p>
         if (ac > 3)
                 srand (atoi (av[3]));
         else
@@ -39,17 +40,17 @@ main (ac, av)
                 printthepattern ();
         }
 }
-
+</p><p>
 init()
 {
   int i, j;
-
+</p><p>
         for (i = 0; i < 60; i++) {
                 for (j = 0; j < 80; j++)
                         screen[i][j] = rand()%2 * 1;
         }
 }
-
+</p><p>
 drift (times)
   int times;
 {
@@ -57,7 +58,7 @@ drift (times)
   int x;
   int y;
   int pixel;
-
+</p><p>
         for (i = 0; i < times; i++) {
                 x = rand () % 80;
                 y = rand () % 59;
@@ -68,11 +69,11 @@ drift (times)
                 if (y>0)  screen[y-1][x] = pixel;
         }
 }
-
+</p><p>
 printthepattern ()
 {
   int i, j;
-
+</p><p>
         gotoxy (0, 0);
         for (i = 0; i < 59; i++) {
                 for (j = 0; j < 79; j++) {
@@ -82,14 +83,15 @@ printthepattern ()
                 printf ("\n");
         }
 }
-
+</p><p>
 gotoxy (x, y)
   int x, y;
 {
         printf ("\33[%d;%df", y+1, x+1);
 }
-
+</p><p>
 eraseol ()
 {
         printf ("\33[K");
 }
+</p></body></html>

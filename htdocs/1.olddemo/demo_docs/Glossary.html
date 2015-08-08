@@ -1,23 +1,24 @@
- 
-
- 
-
- 
-
-        Appendix I   A Glossary of 
+<html><head><title>Glossary</title></head><body><p>
+</p><p> 
+</p><p>
+</p><p> 
+</p><p>
+</p><p> 
+</p><p>
+        Appendix I   A <a href="Glossary.html">Glossary</a> of 
 Terms 
-
- 
-
+</p><p>
+</p><p> 
+</p><p>
 doc id 
-
+</p><p>
      A tumbler assigned to a document 
 upon its  creation  which  
 corresponds  to its virtual stream 
 address. 
-
+</p><p>
 doc-range 
-
+</p><p>
      A virtual stream region 
 containing several documents  defined 
 by a span.  A doc-range is like a 
@@ -27,9 +28,9 @@ span of text or links within a
 document.  Like  a  span,  it  
 consists  of  a stream address and a 
 width. 
-
+</p><p>
 end-set 
-
+</p><p>
      Any of an indefinite number of 
 terminii (defined by  tumbler  
 addresses) a link may have on the 
@@ -42,9 +43,9 @@ implemented  by their creator.  The
 creator is not neccesarily the 
 "owner" of  the  document in 
 question. 
-
+</p><p>
 from-set 
-
+</p><p>
      The specification of the 
 endpoint of a link from which  the  
 link  was initially defined.  In the 
@@ -52,15 +53,15 @@ present minimal frontend  the
 position  of a from-set in the 
 display of the document is indicated 
 by reverse video text. 
-
+</p><p>
 link id 
-
+</p><p>
      A tumbler assigned to a link 
 upon  its  creation which corresponds 
 to its virtual stream address. 
-
+</p><p>
 home-set 
-
+</p><p>
      The specification of the 
 document or spans  with which  the  
 link is stored; an indication of the 
@@ -68,9 +69,9 @@ creator of the link.  The home-set of
 a link is not  necessarily  the same 
 as that of either its from-set or its 
 to-set. 
-
+</p><p>
 span 
-
+</p><p>
      A pair of tumblers, a  starting  
 stream  address and a width, that 
 define a region of the virtual 
@@ -81,16 +82,16 @@ the virtual  stream.  Typically, the
 only instance of a span being used 
 outside of a v-spec is in a 
 doc-range. 
-
+</p><p>
 span set 
-
+</p><p>
      A list of spans.  In the current 
 implementation span  set  starts with 
 an integer indicating the size of the 
 set, followed by a string of spans. 
-
+</p><p>
 spec set 
-
+</p><p>
      A list of doc-range and vspecs.  
 The most common form  of  address  
 specification that the system 
@@ -101,56 +102,56 @@ spec set  starts  with  an  integer
 indicating  the number of specs in 
 the spec set, followed by a string of 
 specs. 
-
+</p><p>
 spec 
-
+</p><p>
      Either a doc-range or vspec.  A 
 spec consists of a document id or 
 link id, and a span set.  All spans 
 in the span set refer to the document 
 or link in the spec. 
-
+</p><p>
 stream address 
-
+</p><p>
      A tumbler which corresponds to 
 an address in the virtual stream. 
-
+</p><p>
 to-set 
-
+</p><p>
      The specification of the 
 endpoint of a  link  to which  the  
 link  was initially created.  In the 
 present minimal frontend the position 
 of  a  to-set  in  the  displayed 
 document is indicated by underlining. 
-
+</p><p>
 tumbler 
-
+</p><p>
      The type of ordinal number used  
 in  the  system for stream addresses. 
 See appendix 2. 
-
+</p><p>
 virtual stream 
-
+</p><p>
      All the data  on  the  system  
 --  text,  links, etc.-- conceived as 
 one extended list of bytes. 
-
+</p><p>
 virtual stream address or vsa 
-
+</p><p>
      position of the thing -- 
 document, link or character -- on the 
 virtual stream. 
-
+</p><p>
 v-span set 
-
+</p><p>
      A span set within a v-spec.  A  
 v-span  set  can only  describe  
 spans  within the document of the 
 v-spec. 
-
+</p><p>
 v-span 
-
+</p><p>
      A v-span has two parts, like a  
 span:  a  stream address, and a 
 width.  The stream address is not the 
@@ -177,14 +178,15 @@ everything up  to  and not  including
 1.501 is specified.  With a width of 
 1, the first non-included item would 
 be  2.1, the first link. 
-
+</p><p>
 v-spec 
-
+</p><p>
      A doc id followed by a spanset 
-
+</p><p>
 width 
-
+</p><p>
      the size of a region; the sum of 
 the origin  and width address is the 
 first thing past the end of the 
 region. 
+</p></body></html>

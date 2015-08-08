@@ -1,11 +1,12 @@
- 
-
- 
-
- 
-
+<html><head><title>Outln</title></head><body><p>
+</p><p> 
+</p><p>
+</p><p> 
+</p><p>
+</p><p> 
+</p><p>
 Disclaimer- 
-
+</p><p>
      This is a technical overview  
 document.   It  covers  the  current 
 status  of  the  Xanadu  hypertext 
@@ -13,42 +14,42 @@ system.  Since the system is not yet
 complete, some of the features that 
 must be discussed are not currently 
 implemented.  These are: 
-
- 
+</p><p>
+</p><p> 
      1) Link Types 
-
+</p><p>
      2) Historical trace 
-
+</p><p>
      3) Multi-user Capability 
-
+</p><p>
      4) Networking 
-
- 
+</p><p>
+</p><p> 
      The above features are listed 
 according to the order  priority  of 
 future  implementation.  Link types 
 are a simple improvement and merely 
 await more computer resources (disk). 
-
+</p><p>
      Historical trace is a separable 
 portion of the software so it  has 
 been  postponed  until it is 
 convenient to implement.  This can be 
 done in stages. 
-
+</p><p>
      Multi-user capability will be 
 implemented as a  transaction  based 
 system, possibly before historical 
 trace (depending on customer demands 
 and resources). 
-
+</p><p>
      Networking will require much 
 communication between nodes to 
 facilitate such things as "computer 
 conferencing" applications.  
 Implementation time depends on 
 customer demands and resources. 
-
+</p><p>
      This document will give  
 examples  with  network  nodes  and  
 user accounts  in the addresses.  In 
@@ -56,7 +57,7 @@ the current implementation there are
 no nodes or accounts, so all document 
 ids will resemble  "0.0.1"  with  no 
 node or account id. 
-
+</p><p>
      This document will be updated as 
 necessary.  Portions  that  refer to  
 the  above  features should be taken 
@@ -68,24 +69,24 @@ Three-sets will appear in various
 retrieval restriction portions of 
 many commands, but they aren't 
 documented  that way now. 
-
+</p><p>
  General System Operation 
-
+</p><p>
      Backend   The backend is that 
 part of the system which stores  and 
 retrieves documents and links.  The 
 backend is application independent. 
-
+</p><p>
      Frontend  The frontend is the 
 user interface in this  system.   It 
 will  normally  run  on the computer 
 in the user's terminal.  The front 
 end contains all application 
 dependent features. 
-
+</p><p>
                        Maintenance of 
 documents and versions of documents 
-
+</p><p>
      The information in a Xanadu 
 System is stored as a  set  of  
 "documents".   Documents  are not 
@@ -98,25 +99,25 @@ are instructions for getting from one
 document to another.  It is useful to 
 think  of all the documents in the 
 system as residing on some part of a 
-virtual list indexed by tumblers -- 
+virtual list <a href="index.html">index</a>ed by tumblers -- 
 the virtual stream.  (A tumbler  is a 
 special kind of number; a full 
 definition of tumbler is available in 
 the technical specifications)  New 
 documents are created on this stream 
 by the following function: 
-
+</p><p>
      CREATENEWDOCUMENT 
    returns a new document id 
-
+</p><p>
      This command simply creates a 
 way to access the document from some 
 old  document  the  user  already 
-"owns", such as a master index of his 
+"owns", such as a master <a href="index.html">index</a> of his 
 work.  Essentially the frontend is 
 passed a tumbler address on the 
 virtual stream for the new document. 
-
+</p><p>
      All past incarnations of a 
 document that have  been  developed  
 on the  Xanadu system can be 
@@ -128,9 +129,9 @@ editing  sessions, is a natural thing
 to do given our specialized data 
 structures.  We plan to implement 
 this function with the command: 
-
+</p><p>
      NAVIGATEONHT 
-
+</p><p>
      Such a capability will be very 
 useful for any individual  involved 
 with  demanding  composition  tasks  
@@ -140,7 +141,7 @@ For  such  people  --  designers,
 researchers,  creative  writers -- 
 convenient access to past approaches 
 will be invaluable. 
-
+</p><p>
      Likewise creating multiple 
 "versions" of a document,  perhaps  
 for somewhat  different  purposes  or 
@@ -152,10 +153,10 @@ interest from among the vast number
 that can be reconstructed.  This is 
 the function of the following 
 command: 
-
+</p><p>
      CREATENEWVERSION 
    returns document id of new version 
-
+</p><p>
      The new document will have a 
 tumbler address that  indicates  that 
 the new document is descended from 
@@ -172,7 +173,7 @@ session is a "version".  A "version"
 with its own tumbler address must be 
 created by a CREATENEWVERSION 
 command. 
-
+</p><p>
      That tumbler address provides a 
 ready means of access from an  old 
 version  of  a  document to a new 
@@ -194,11 +195,11 @@ computer programs, contracts,
 technical  specifications or 
 accounts.  This is the role of the 
 following function: 
-
+</p><p>
      SHOWRELATIONOF2VERSIONS 
    returns ordered pairs of common 
 passages 
-
+</p><p>
      Note that the information 
 returned is the passages  the  two  
 versions  or  documents  have  in  
@@ -218,9 +219,9 @@ navigate between independently
 developed versions which share a 
 common origin in some previous 
 document. 
-
+</p><p>
 Editing of documents 
-
+</p><p>
      data structures maintained by 
 the backend.  So the backend must be 
 passed a more detailed account of an 
@@ -233,11 +234,11 @@ Thus inserting a five letter word
 requires five calls  to  the  backend 
 and five evocations of the following 
 function: 
-
+</p><p>
      INSERT 
    puts in text beginning at a known 
 position 
-
+</p><p>
      This function inserts the text 
 at the specified tumbler addresses. 
 Of  course  the  frontend could 
@@ -245,7 +246,7 @@ accumulate such data and send it to
 the backend as a block at some 
 reasonable time.  This change will  
 soon  be made. 
-
+</p><p>
      Note that the  other  editing  
 functions  which  follow  also  are 
 defined  with  reference  to  the 
@@ -257,22 +258,22 @@ time than an optimized block file
 editor would, but this is a small 
 price to pay for the maintenance of a 
 useful well-ordered data structure. 
-
+</p><p>
      [1] DELETEVSPAN 
   virtual deletion of text where 
 indicated 
-
+</p><p>
      [2] COPY 
   creates virtual copies where 
 indicated 
-                                      
+</p><p>                                      
      [3] REARRANGE 
   transposes virtual text 
-
+</p><p>
      [4] APPEND 
   inserts characters at the end of 
 the document's text 
-
+</p><p>
      The first function, "delete", 
 tells the backend to delete a set of 
 bytes  defined  by  their  position 
@@ -284,7 +285,7 @@ the user deletes material by
 positioning the cursor and deleting 
 the desired material character by 
 character. 
-
+</p><p>
      "Copy" puts a virtual copy of 
 any specified material  (as  defined 
 by vspecs, i.e. tumbler addressing of 
@@ -293,7 +294,7 @@ destination indicated by the frontend
 or the user.  No  text  is  actually 
 moved, rather a new way to access the 
 material is created. 
-
+</p><p>
      "Rearranges" are defined by 
 delimiters inserted by the  user.   
 If three  cuts  are supplied the 
@@ -306,7 +307,7 @@ swapped  with  the  material  between
 cuts "3" and "4" .  However, once 
 again only address changes are 
 involved. 
-
+</p><p>
      "Append" adds characters to the 
 end of documents.  It is simply  a 
 more  convenient  insert  for  a few 
@@ -314,9 +315,9 @@ specific applications, such as the
 implementation of the front-end 
 functions that manage the initial 
 entry of text into a document. 
-
+</p><p>
 Links 
-
+</p><p>
      One of the great advantages of 
 the Xanadu Hypertext System is  the 
 structure of interconnections 
@@ -331,14 +332,14 @@ course  algorithms  may  be  written
 which create the links implicitly 
 specified in already published 
 material, such as lists of references 
-or indexes) The function for creating 
+or <a href="index.html">index</a>es) The function for creating 
 such a link follows: 
-
+</p><p>
      MAKELINK 
    creates a directional link from a 
 point in one document to  a  point in 
 another 
-
+</p><p>
      All links created by a user 
 reside in some home document  of  
 his, including  those  that  link 
@@ -349,7 +350,7 @@ terminus. In  the  future  the
 creator will be able to assign a link 
 type -- e.g. footnote, marginal note, 
 etc. -- to a link when it is made. 
-
+</p><p>
      Once a set of links to or from a 
 document has been  created  their 
 existence  must  be  indicated  to 
@@ -361,21 +362,21 @@ attributes or color codes to text
 that is at the end-points of links.  
 The following function finds these 
 endpoints: 
-
+</p><p>
      RETRIEVEENDSETS 
    returns virtual stream addresses 
 for the end-sets of the links  that 
 start or terminate in the current 
 document 
-
+</p><p>
      Note that we plan to use the 
 link type defined when the  link  was 
 made as one constraint on the number 
 of link end-sets displayed. 
-
+</p><p>
  Document Retrieval -- navigating in 
 the link structure 
-
+</p><p>
      Ready direct access from any 
 particular  document  to  an  immense 
 number  of  other  documents  creates 
@@ -415,9 +416,9 @@ material  he wishes  to  investigate
 before requesting the available 
 links.  He may conveniently detect 
 such situations by using the command: 
-
+</p><p>
      FINDNUMOFLINKSFROMTO 
-
+</p><p>
      This command simply returns the 
 number of links to or  from  other 
 documents  from or to the material of 
@@ -426,7 +427,7 @@ user of the need to put further
 limits on the  scope  of  his  
 request. This may be done in a number 
 of ways. 
-
+</p><p>
      First and simplest, one may 
 specify the type of link to follow. 
 (Indeed we plan to allow the user to 
@@ -438,7 +439,7 @@ a user finds useful; currently we
 plan  to  implement,  however, only a 
 few types, e.g. footnotes, 
 quotations, andannotations. 
-
+</p><p>
      Secondly, the set of documents 
 linked to the passage  of  interest 
 may  be  partitioned in terms of some 
@@ -470,11 +471,11 @@ frontends) Several  link  tracing
 functions  already implemented will 
 provide the basis for this 
 capability: 
-
+</p><p>
      [1] FINDLINKSFROMTO 
-
+</p><p>
      [2] FINDNEXTNLINKSFROMTO 
-
+</p><p>
      The first command returns all of 
 the links that fit the specifications 
 defined  by  the accompanying 
@@ -494,7 +495,7 @@ large number of links a set number at
 a time, checking out their usefulness 
 one by one, rather than immediately 
 recovering the entire set. 
-
+</p><p>
      With his search so constrained 
 to practical limits a researcher is 
 ready  to  follow  a link down to his 
@@ -502,13 +503,13 @@ first reference.  His request for
 this reference from his frontend will 
 generate at least  the  following 
 three backend calls: 
-
+</p><p>
      [1] FOLLOWLINK 
-
+</p><p>
      [2] RETRIEVEDOCVSPAN 
-
+</p><p>
      [3] RETRIEVEV 
-
+</p><p>
      The first provides the position 
 (tumbler address) of the  document in 
 the  data  structure.   The  second  
@@ -527,18 +528,18 @@ his  place  in  the previous
 document, either to sample the 
 material at the ends of other links 
 or to work with the document itself. 
-
+</p><p>
      In some cases one may be faced 
 with too few rather than  too  many 
 cross  references.   In  such  cases  
 the domain of one's search can be 
 enlarged by use of the following 
 command: 
-
+</p><p>
      FINDDOCSCONTAINING 
    returns i.d.s of documents 
 containing specified passages 
-
+</p><p>
      This command will return access 
 directions (tumbler addresses) for 
 any  document containing any passage 
@@ -549,3 +550,4 @@ provides  the user  with
 interconnections  between  documents  
 not  made explicit by the use of 
 links. 
+</p></body></html>

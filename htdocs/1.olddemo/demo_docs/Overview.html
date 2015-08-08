@@ -1,9 +1,10 @@
- 
+<html><head><title>Overview</title></head><body><p>
+</p><p> 
   A technical overview of the Xanadu 
 Hypertext System 
-
- 
-
+</p><p>
+</p><p> 
+</p><p>
      The Xanadu Hypertext System is a 
 unified system  for  storing  and 
 managing certain forms of 
@@ -11,29 +12,29 @@ information, namely: bodies of
 documents.  It is built around a 
 small number of relatively simple 
 concepts: 
-
+</p><p>
 o    DOCUMENTS 
-
+</p><p>
 o    multiple VERSIONS of documents 
-
+</p><p>
 o    LINKS between documents 
-
+</p><p>
 o    distributed storage and 
 distributed computation -- NETWORKING 
-
+</p><p>
 o    isolation  of  storage  
 functions  from   display   functions 
 -- 
      BACKEND/FRONTEND 
-
+</p><p>
      We will discuss each of these in 
 turn and thereby build up a  picture  
 of  what  the  Xanadu  System is, 
 what it does, and what makes it 
 unique. 
-
+</p><p>
 Documents 
-
+</p><p>
      A "document" is a chunk of 
 contiguous characters (or  other  
 data) which functions in some way as 
@@ -46,7 +47,7 @@ systems.  Beware of this analogy,
 however, because it breaks down quite 
 thoroughly in the face of the other 
 properties of the system. 
-
+</p><p>
      A document may contain whatever 
 the user decides  to  put  in  it. 
 While documents will generally 
@@ -62,7 +63,7 @@ reports,  pictures,  computer
 programs, maps, diagrams, recordings, 
 etc.:  whatever the user desires the 
 document  to be. 
-
+</p><p>
      Each document stored in the 
 system is assigned a unique 
 identifier when it is created.  This 
@@ -71,10 +72,10 @@ transactions with the system to
 designate  that  particular  
 document.   This document  identifier 
 is  a  special sort of number called 
-a "tumbler". Tumblers are multipart 
+a "tumbler". <a href="Tumblers.html">Tumblers</a> are multipart 
 numbers similar to those used to 
 number sections of  technical  
-manuals  and to index books in the 
+manuals  and to <a href="index.html">index</a> books in the 
 Dewey Decimal System. For example, 
 1.0.3.15 and 123.5.6391.0.8.1  are  
 both  tumblers.   They have  the  
@@ -88,8 +89,8 @@ identifiers possible and therefore no
 theoretical  limit  to  the number of 
 possible documents due to a finite 
 address space. 
-
-                                      
+</p><p>
+</p><p>                                      
 Since a document is a linear array of 
 bytes, we can refer  to  any 
 particular  character  in  a  
@@ -100,7 +101,7 @@ a  character position  within  that
 document, we can uniquely address any 
 character stored in the entire 
 system. 
-
+</p><p>
      By designating a particular 
 (starting) character and a  length  
 we can  address any contiguous string 
@@ -112,9 +113,9 @@ positions and span lengths, it is
 possible to have spans which contain 
 whole documents  and  cross  document 
 boundaries. 
-
+</p><p>
 Versions 
-
+</p><p>
      The Xanadu Hypertext System can 
 manage multiple differing versions of 
 a  single document.  Typically, 
@@ -126,7 +127,7 @@ of a chapter or when a computer
 program and its documentation are 
 maintained for  several  different  
 installations. 
-
+</p><p>
      Whenever a document is changed, 
 the  changes  are  recorded.   The 
 system  remembers  both  the  old and 
@@ -149,7 +150,7 @@ trail  is in  the form of an
 historical trace tree which branches 
 whenever parallel versions are 
 maintained. 
-
+</p><p>
      In the general case, the problem 
 of comparing two pieces  of  text to  
 determine the differences between 
@@ -164,34 +165,34 @@ performs  the  actual  changes   and
 a whole new document passed to it by 
 some external editor, as most systems 
 would do. 
-
+</p><p>
      Xanadu understands a simple set 
 of editing primitives by which  it 
 can be directed to make changes to a 
 document: 
-
+</p><p>
 o    INSERT characters at some point 
 in the document. 
-
+</p><p>
 o    DELETE characters from some 
 point in the document. 
-
+</p><p>
 o    MOVE a span of characters from 
 one location  in  the  document  to 
      another. 
-                                      
+</p><p>                                      
 o    COPY a span of characters from 
 one location in  the  document  (or 
      from  anywhere in the rest of 
 the system, for that matter) to some 
      location in the document. 
-
+</p><p>
      A moment's thought will reveal 
 that these  operations  are  
 sufficient to perform any more 
 complex editing operations in their 
 entirety. 
-
+</p><p>
      This sort of arrangement is not  
 unique.   However,  most  systems 
 which do this, such as Bell 
@@ -208,7 +209,7 @@ branching versions and it is costly
 in terms of computational overhead, 
 becoming  more  so as more and more 
 changes are made to a document. 
-
+</p><p>
      In the Xanadu System, these 
 primitives correspond to operations 
 on the  proprietary  data  structures 
@@ -225,9 +226,9 @@ is the only system in existence able
 to  manage  multiple  versions  of 
 data in such a general and efficient 
 manner. 
-
+</p><p>
 Links 
-
+</p><p>
      A "link" is merely an  explicit  
 logical  connection  between  one 
 piece of data and another.  The 
@@ -238,7 +239,7 @@ entire system  can  be  linked to any
 other body of text in the system.  
 Links may connect text within a 
 document or run between documents. 
-
+</p><p>
      Any given link connects from one 
 set of  text  in  the  system  to 
 another.   The  bodies  of text at 
@@ -253,7 +254,7 @@ surprisingly, although  the
 relationship  is  entirely 
 symmetrical and a link may be 
 followed in either direction. 
-
+</p><p>
      The potential contents of an 
 end-set are totally unrestricted.  An 
 end-set  may  consist  of an 
@@ -261,7 +262,7 @@ unlimited number of spans.  The
 characters linked to or from need not 
 be contiguous or even in the same 
 document. 
-
+</p><p>
      Links themselves are said to 
 reside inside documents, located in a 
 separate logical address space from 
@@ -277,8 +278,8 @@ links themselves may be linked from
 or to, just as characters may.  Thus 
 very general sorts of indirect 
 structures  may be assembled. 
-
-                                      
+</p><p>
+</p><p>                                      
      It was mentioned above that the 
 end-sets are  symmetric  and  only 
 distinguished  by  convention.   In 
@@ -289,7 +290,7 @@ purpose  of  the link.  We have found
 it convenient to define, again by 
 convention, a third end-set called 
 the "three-set". 
-
+</p><p>
      The purpose of the three-set is 
 to designate information  pertaining 
 to the link itself.  By this means we 
@@ -315,7 +316,7 @@ display the link and its end-sets.
 In any case, the mechanism is totally 
 general and constrained only by 
 convention. 
-
+</p><p>
      There are very few systems  
 which  attempt  to  implement  a  
 link facility  at  all like this. We 
@@ -356,7 +357,7 @@ as  citation  indices.
 Nevertheless,  we  believe we have 
 the general-case solution to these 
 problems. 
-
+</p><p>
      One might ask what happens to 
 the end-sets of links when the 
 documents  containing the characters 
@@ -372,22 +373,22 @@ the most current version.  Links will
 always point to the same text even 
 though the document  containing  the 
 text may change.  For example: 
-
+</p><p>
      here is some text.          
-
+</p><p>
 some text in a document. 
-
+</p><p>
      here is some more text.    
-
+</p><p>
 some characters are inserted 
-
+</p><p>
      here is me more text.      
-
+</p><p>
 some characters are deleted 
-                                      
+</p><p>                                      
      [the underlined characters 
 represent an end-set of some link] 
-
+</p><p>
      The ability to maintain links 
 across multiple  versions  of  
 documents  is  one  of  the totally 
@@ -396,9 +397,9 @@ the Xanadu System.  The problems
 inherent in doing this are  almost  
 unimaginably subtle, but we believe 
 we have found the solution. 
-
+</p><p>
 Multi-user 
-
+</p><p>
      The facilities of the Xanadu 
 Hypertext System would be of  limited 
 utility  if  each  user  functioned  
@@ -407,7 +408,7 @@ designed to be a  multi-user  system,
 allowing  independent  users  to 
 access and manipulate the same body 
 of information. 
-
+</p><p>
      Each user in the system has  a  
 unique  user  identifier  tumbler. 
 Each document in the system has an 
@@ -417,7 +418,7 @@ the fields of the document identifier
 tumbler.   By this means we can 
 immediately determine the ownership 
 of any document. 
-
+</p><p>
      The owner of a document may 
 grant other users permission to 
 access it.   As  with  most aspects 
@@ -438,7 +439,7 @@ version which is your own document.
 The other user is unaware of your 
 version unless  you  inform him or 
 her. 
-
+</p><p>
      The multi-user capability of  
 Xanadu  makes  a  number  of  useful 
 activities  possible.   For  example, 
@@ -459,9 +460,9 @@ sophisticated "electronic mail"
 system.  By passing a link to another 
 user you can point him  at  something 
 you want him to read. 
-
+</p><p>
 Networking 
-
+</p><p>
      As the number of users on an 
 installation  of  the  Xanadu  System 
 grows larger, the processing and 
@@ -479,7 +480,7 @@ system performance.  It does this by
 allowing the system to spread out 
 over as many machines as are needed 
 to support all users effectively. 
-                                      
+</p><p>                                      
      The portion of the system which 
 stores and retrieves documents and 
 links  is  designed  to  be  able to 
@@ -495,7 +496,7 @@ sends a request via the network to
 the machine in which the information 
 is stored.  This machine in turn 
 sends back the requested data. 
-
+</p><p>
      The system does not care what 
 communications technology  is  used, 
 as long as it gets the bits from one 
@@ -512,7 +513,7 @@ unavailable, of course, and any
 communication paths that went through 
 that node may need to be rerouted, 
 possibly delaying some transmissions. 
-
+</p><p>
      Communications routing from one 
 node to another is  automatic  and 
 implicit  in  the  network design.  
@@ -521,7 +522,7 @@ knowledge of the entire network, thus
 the  network  can  grow  without 
 every node being informed of every 
 change to the network topology. 
-
+</p><p>
      Various optimizations are built 
 in.  If a node finds  that  it  is 
 being given frequent requests for 
@@ -539,9 +540,9 @@ this is  accomplished  internally  by
 the same data structures that manage 
 all the other functions of the 
 system. 
-
+</p><p>
 Backend/Frontend 
-
+</p><p>
      All of the capabilities 
 described above are part of what is 
 called the  "backend".   The  backend 
@@ -553,7 +554,7 @@ backend is the portion which does all
 the "impossible" things.  It contains 
 the  proprietary  components  which  
 we  have developed. 
-
+</p><p>
      User interaction - the display 
 of old data and the  acceptance  of 
 new  data  -  is accomplished by the 
@@ -565,7 +566,7 @@ frontend decides how the data is to
 be formatted for display.  The 
 frontend knows  how  to  interface  
 with various input or output devices. 
-
+</p><p>
      The frontend and the  backend  
 communicate  using  a  standardized 
 request  and  data  transmission 
@@ -591,7 +592,7 @@ written by us, or purchased from us.
 While we will  be  producing  and 
 selling frontends, we expect others 
 to do so as well. 
-
+</p><p>
      Frontends may be general purpose 
 or  special  purpose.   Different 
 applications, different forms of 
@@ -618,9 +619,9 @@ these different activities can  be
 accommodated using the same backend 
 design - the backend is application 
 independent. 
-
+</p><p>
 Summary 
-
+</p><p>
      The Xanadu  Hypertext  System  
 is  the  most  powerful  system  in 
 existence  for  managing  text  and  
@@ -646,3 +647,4 @@ functions into an independent
 frontend.   The  Xanadu Hypertext 
 System is the only system which can 
 do all of these things. 
+</p></body></html>
