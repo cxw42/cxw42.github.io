@@ -1,16 +1,16 @@
-<html><head><title>CopyOnWrite</title></head><body>
+<html><head><title>CopyOnWrite</title></head><body><p>
   Whiteboard: <a href="CopyOnWrite.html">CopyOnWrite</a>    	  last revised by 127.0.0.1 on Aug 17, 2005 2:30 am     	
-		
-
+</p><p>		
+</p><p>
 If you want two virtual copies of a thing, you can have two pointers to the same thing. But if you then want to modify one of the copies while leaving the other alone, you can't just modify the shared thing. "Copy on write" means that when you need to modify, you make an actual copy, change one of the pointers, and modify the appropriate copy.
-
+</p><p>
 In some versions of Unix, copy-on-write is used on virtual-memory blocks to allow quick copying of process address spaces. As far as I know the unix filesystems, cp command and "memcpy" don't take advantage of this, though.
-
+</p><p>
 Copy-on-write lets you make versions of a tree data structure by copying only those nodes of the tree that need changing. You build a new version with a new root node and a combination of new and old nodes underneath. The previous version of the tree can still exist unchanged, sharing most of its nodes with the new. This is also called "structure sharing". The Xanadu people call this "peeling off" one version or part of a tree from another.
-
+</p><p>
 In enfilades, structure sharing allows the virtual copying of a region of an address space while actually only copying and modifying nodes at the edge of the space and higher in the tree.
-
+</p><p>
 Structure-sharing is a sort of low-level version of the <a href="TransClusion.html">TransClusion</a> concept, where "the same thing" can have a single identity but exist in many places.
-
+</p><p>
 --SteveWitham? 
-</body></html>
+</p></body></html>

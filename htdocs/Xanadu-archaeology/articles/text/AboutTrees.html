@@ -1,17 +1,17 @@
-<html><head><title>AboutTrees</title></head><body>
+<html><head><title>AboutTrees</title></head><body><p>
 Content Last Modified on May 03, 2005, at 01:28 PM CST
 About Tree Data Structures
-
+</p><p>
 - trees versus hashes (we need range operations, which are lacking in hashes)
-
+</p><p>
 - most trees are organzized along one dimension of search
-
+</p><p>
 (TBD: add lots of links to background material on wikipedia et. al.)
-
+</p><p>
 Operations
-
+</p><p>
 Dynamic set operations, in time proportional to the height of the tree.
-
+</p><p>
     * search
     * predecessor
     * successor
@@ -19,13 +19,13 @@ Dynamic set operations, in time proportional to the height of the tree.
     * maximum
     * insert
     * delete 
-
+</p><p>
 Balanced versus Unbalanced
-
+</p><p>
 A balanced tree has a height "log n" where n is the number of nodes in the tree. The objective of balancing is to minimize the number of levels in the tree in order to obtain the best running time.
-
+</p><p>
 Types of Trees
-
+</p><p>
 binary-tree?
     has at most two child nodes per node 
 red-black?
@@ -38,23 +38,23 @@ quad?
     ??? 
 K-dimensional?
     ??? 
-
+</p><p>
 Caching
-
+</p><p>
 Large trees often cannot all be held in primary storage (RAM) at one time. Instead a virtualization of storage, by combining an in-memory cache with secondary storage is used in these cases. Optimizing the number of nodes becomes more important with splitting storage across primary and secondary.
-
+</p><p>
 Mutability versus Immutability
-
+</p><p>
 Concurrency Issues
-
+</p><p>
 Performance re the Big O
-
+</p><p>
 (insert table of factors)
-
+</p><p>
 Relevant Citations
-
+</p><p>
     * Bayer, R., M. Schkolnick. Concurrency of Operations on B-Trees. In Readings in Database Systems (ed. Michael Stonebraker), pages 216-226, 1994.
     * Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, Introduction to Algorithms, MIT Press, Massachusetts: 1998.
     * Gray, J. N., R. A. Lorie, G. R. Putzolu, I. L. Traiger. Granularity of Locks and Degrees of Consistency in a Shared Data Base. In Readings in Database Systems (ed. Michael Stonebraker), pages 181-208, 1994.
     * Kung, H. T., John T. Robinson. On Optimistic Methods of Concurrency Control. In Readings in Database Systems (ed. Michael Stonebraker), pages 209-215, 1994. 
-</body></html>
+</p></body></html>
