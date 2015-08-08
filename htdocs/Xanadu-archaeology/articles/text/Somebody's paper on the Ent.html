@@ -70,7 +70,7 @@ For example, a piece can be copied out of an edition so it can be shared. Rather
 
 missing figure 6b?
 
-Stage 3: versioning
+Stage 3: <a href="versioning.html">versioning</a>
 
 The structures described so far provide all the tools necessary to retain the edit history of documents. The idea is simple: when making a change to a document you leave the tree representing the old version intact and accessible while re-using as much of the sub-structure as possible in building a new tree structure that represents the new version. The DspLoafs? that made it possible to re-use a piece of the tree in a different location also make it possible to use sub-trees in more than one tree at a time.
 
@@ -98,11 +98,11 @@ Doubly-linking the trees will allow us to efficiently answer questions about the
 
 Ent with O-Trees
 
-As we consiters, we also consistently draw the reverse pointers in blue. The red pointers form trees we call the OTrees, because they describe the Organization of each edition.
+As we consiters, we also consistently draw the reverse pointers in blue. The red pointers form trees we call the <a href="OTrees.html">OTrees</a>, because they describe the Organization of each edition.
 
 Ent with H-Trees
 
-The back-pointers form a complementary forest; its trees are called HTrees, since they represent the History of documents. They also represent the relationship between documents that share content because of copying.
+The back-pointers form a complementary forest; its trees are called <a href="HTrees.html">HTrees</a>, since they represent the <a href="History.html">History</a> of documents. They also represent the relationship between documents that share content because of copying.
 
 When talking about what happens at individual nodes (often called histons) of the tree, we sometimes use paired chevrons as icons. This icon emphasizes the splits and the fact that the tree is binary, and ignores the Dsps.
 
@@ -116,7 +116,7 @@ missing figure 10?
 
 We will need to make a formal argument that the lack of a balanced tree in this direction won't hurt us, or else add the balanced tree of back-pointers. Neither of these has been done yet.
 
-The blue HTrees correspond to the blue triangles in our global Ent tetrahedron. The tetrahedral shape arises because of the way we think about the two sets of trees interpenetrating. The red trees each start at a single root and "fan out in O," ("O" is the wide dimension of the leaves of an OTree?; it represents the contents of a document) while the blue trees "fan out in H." The ORoots? don't seem to line up neatly in a row until you look at it from the perspective of the data. From any run of text, all the sharers can be arranged linearly, so the picture is a clarifying representation. The roots of the HTrees are much easier to think of as being lined up and it's very useful to think of a dimension along which the H-Trees spread out. It's crucial to remember that H- anand inverted.
+The blue <a href="HTrees.html">HTrees</a> correspond to the blue triangles in our global Ent tetrahedron. The tetrahedral shape arises because of the way we think about the two sets of trees interpenetrating. The red trees each start at a single root and "fan out in O," ("O" is the wide dimension of the leaves of an OTree?; it represents the contents of a document) while the blue trees "fan out in H." The ORoots? don't seem to line up neatly in a row until you look at it from the perspective of the data. From any run of text, all the sharers can be arranged linearly, so the picture is a clarifying representation. The roots of the <a href="HTrees.html">HTrees</a> are much easier to think of as being lined up and it's very useful to think of a dimension along which the H-Trees spread out. It's crucial to remember that H- anand inverted.
 
 Stage 5: Navigating northward
 
@@ -160,7 +160,7 @@ The recent proposal suggests that we could do better, at least in the insurance 
 
 This proposal seems to work because the endorsements provide a coordinate system which we can efficiently maintain in the ent volume. We expect to have few enough endorsements in the insurance application that the cost of maintaining the information throughout the volume won't give us trouble.
 
-Recorders need to be reachable from the leaves of the OTrees so you can tell when some part of a document is linked-to or included in a new document. The canopy solution makes them reachable by storing them in the projected tree rather than in the volume. The new proposal suggests that we store them in the volume and migrate them upward in the tree to the frontier of the volume they apply to.
+Recorders need to be reachable from the leaves of the <a href="OTrees.html">OTrees</a> so you can tell when some part of a document is linked-to or included in a new document. The canopy solution makes them reachable by storing them in the projected tree rather than in the volume. The new proposal suggests that we store them in the volume and migrate them upward in the tree to the frontier of the volume they apply to.
 
 This is not enough detail that you should expect to understand, but when it gets explained later, you'll have heard it before.?
 </body></html>

@@ -1,5 +1,5 @@
 <html><head><title>CopyOnWrite</title></head><body>
-  Whiteboard: CopyOnWrite    	  last revised by 127.0.0.1 on Aug 17, 2005 2:30 am     	
+  Whiteboard: <a href="CopyOnWrite.html">CopyOnWrite</a>    	  last revised by 127.0.0.1 on Aug 17, 2005 2:30 am     	
 		
 
 If you want two virtual copies of a thing, you can have two pointers to the same thing. But if you then want to modify one of the copies while leaving the other alone, you can't just modify the shared thing. "Copy on write" means that when you need to modify, you make an actual copy, change one of the pointers, and modify the appropriate copy.
@@ -10,7 +10,7 @@ Copy-on-write lets you make versions of a tree data structure by copying only th
 
 In enfilades, structure sharing allows the virtual copying of a region of an address space while actually only copying and modifying nodes at the edge of the space and higher in the tree.
 
-Structure-sharing is a sort of low-level version of the TransClusion concept, where "the same thing" can have a single identity but exist in many places.
+Structure-sharing is a sort of low-level version of the <a href="TransClusion.html">TransClusion</a> concept, where "the same thing" can have a single identity but exist in many places.
 
 --SteveWitham? 
 </body></html>

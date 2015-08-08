@@ -8,7 +8,7 @@ The POOM is used within Udanax Green. I think its job or jobs are handled by the
 
 A Permutation of Order Matrix is a 2D matrix mapping from a virtual address (the position within a document you're reading) to "invariant" address (not exactly where the contents are stored, but their permanent identity-addresses).
 
-This is different from the way a ModelT enfilade maps virtual addresses to contents. Concentrate on this abstract 2D picture for now, and then we'll go over how it is represented in an enfilade.
+This is different from the way a <a href="ModelT.html">ModelT</a> enfilade maps virtual addresses to contents. Concentrate on this abstract 2D picture for now, and then we'll go over how it is represented in an enfilade.
 
 What it Does
 
@@ -50,7 +50,7 @@ How is this represented in a POOM enfilade? As a 2D structure, like a drawing. T
 
 But the main job of this thing is to map from V to I. How is that done if one has to specify both V and I address? Well, you ask what's in a vertical slit that has the V address you want, and spans the whole I range. Likewise, you can ask where a given piece of original text appears by asking about a horizontal slit at its I position.
 
-Wonderful! A data structure that stores a mapping-- including virtual copies--in a way that can be accessed both forward and backward. Just what's needed for versioning, intercomparison and bi-directional links in Xanadu... but not quite. It is still not efficient to go from one V range to I and back to a different V range. The Span-enfilade in Green and the Canopy in Gold are needed for that.
+Wonderful! A data structure that stores a mapping-- including virtual copies--in a way that can be accessed both forward and backward. Just what's needed for <a href="versioning.html">versioning</a>, intercomparison and bi-directional links in Xanadu... but not quite. It is still not efficient to go from one V range to I and back to a different V range. The Span-enfilade in Green and the Canopy in Gold are needed for that.
 
 How it Does it
 

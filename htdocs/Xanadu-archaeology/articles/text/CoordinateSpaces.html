@@ -1,5 +1,5 @@
 <html><head><title>CoordinateSpaces</title></head><body>
-  Whiteboard: CoordinateSpaces    	  last revised by 127.0.0.1 on Aug 17, 2005 2:27 am     	
+  Whiteboard: <a href="CoordinateSpaces.html">CoordinateSpaces</a>    	  last revised by 127.0.0.1 on Aug 17, 2005 2:27 am     	
 		
 
     * Heaper
@@ -23,7 +23,7 @@
             For example, "dsp->of (pos)" is not an error iff "dsp->coordinateSpace()->isEqual(pos->coordinateSpace())".
 
             Note that this class is not COPY or even PSEUDO_COPY. All of the instance variables for CoordinateSpace? are basically cached quantities that require vary little actual state from the derived classes in order to be constructed. This realization allows a knot to be untangled when reading these objects from external storage."""
-                + BasicSpace? """BasicSpace? versus CoordinateSpace? is not a type distinction in that there is no difference in contract with the client. BasicSpace? exists as a convenience to the definer of new CoordinateSpaces. A new subclass of CoordinateSpace? should be a subclass of BasicSpace? iff there is only one coordinateSpace that corresponds to the new class, i.e. that the instances are not parameterized to yield different coordinate spaces. BasicSpace? provides some conveniences (especially in Smalltalk) for defining a single canonical instance at dynamic initialization time, and always using it.
+                + BasicSpace? """BasicSpace? versus CoordinateSpace? is not a type distinction in that there is no difference in contract with the client. BasicSpace? exists as a convenience to the definer of new <a href="CoordinateSpaces.html">CoordinateSpaces</a>. A new subclass of CoordinateSpace? should be a subclass of BasicSpace? iff there is only one coordinateSpace that corresponds to the new class, i.e. that the instances are not parameterized to yield different coordinate spaces. BasicSpace? provides some conveniences (especially in Smalltalk) for defining a single canonical instance at dynamic initialization time, and always using it.
 
                   As this class is irrelevant to CoordinateSpace? clients, but useful to those defining other kinds of coordinate spaces, it is an excellent example of something that would be classified as a "protected" class -- something to be pursued if we try to make modules more like classes."""
 
@@ -175,11 +175,11 @@
                         Mathematically, this is all that is necessary, since other useful filters like intersection filters can be generated from these. (e.g. intersectionFilter(R) is subsetFilter(R->complement())->complement()). However, there are several more pseudo constructors provided as shortcuts, including intersectionFilters, closedFilters, emptyFilters, and intersections and unions of sets of filters."""
 
                             * ClosedFilter?
-                            * NotSubsetFilter?
+                            * Not<a href="SubsetFilter.html">SubsetFilter</a>?
                             * NotSupersetFilter?
                             * OpenFilter?
-                            * OrFilter
-                            * SubsetFilter
+                            * <a href="OrFilter.html">OrFilter</a>
+                            * <a href="SubsetFilter.html">SubsetFilter</a>
                             * SupersetFilter?
                             * IntegerRegion? """An IntegerRegion? can be thought of as the disjoint union of intervals and inequalities. The interesting cases to look at are:
 

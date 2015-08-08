@@ -1,5 +1,5 @@
 <html><head><title>EnfiladeTheory</title></head><body>
-Whiteboard: EnfiladeTheory    	  last revised by 127.0.0.1 on Aug 17, 2005 2:58 am     	
+Whiteboard: <a href="EnfiladeTheory.html">EnfiladeTheory</a>    	  last revised by 127.0.0.1 on Aug 17, 2005 2:58 am     	
 		
 
 Um, okay you sluggards, listen up. We just can't have a technical site about Xanadu without a page about enfilades and enfi1ade theory.
@@ -28,21 +28,21 @@ The cool result is that (stretching an already strange example), you could move 
 
 Or, you could swap the 100 block houses with the 200-block houses, without changing their disps, just changing some keys and pointers higher up in the tree.
 
-Or, you could "copy" the whole block of houses to another block without changing or copying any individual records. You would just add another pointer higher in the tree, with a different starting disp, and the two blocks would share a subtree. Note that with this virtual copying, both "copies" are equally easy to access (same depth in the tree) and equally valid, a kind of shadow of the TransClusion concept. (What do you do now if you want to modify one of the copies but not the other? Shared nodes have reference counts and get actually copied when they are modified. The result is that a sliver of the tree down to the thing you modify gets actually copied and modified. You may have heard of this before as "CopyOnWrite".)
+Or, you could "copy" the whole block of houses to another block without changing or copying any individual records. You would just add another pointer higher in the tree, with a different starting disp, and the two blocks would share a subtree. Note that with this virtual copying, both "copies" are equally easy to access (same depth in the tree) and equally valid, a kind of shadow of the <a href="TransClusion.html">TransClusion</a> concept. (What do you do now if you want to modify one of the copies but not the other? Shared nodes have reference counts and get actually copied when they are modified. The result is that a sliver of the tree down to the thing you modify gets actually copied and modified. You may have heard of this before as "<a href="CopyOnWrite.html">CopyOnWrite</a>".)
 
 So, you can move (change the addresses or keys of), rearrange, and copy whole blocks of data in an enfi1ade just by changing small numbers of disps and pointers in a tree.
 
 The Model T
 
-The original, or "ModelT" enfi1ade does this for Text, allowing insertion, deletion, rearrangement and copying of sections of arbitrarily large texts quickly.
+The original, or "<a href="ModelT.html">ModelT</a>" enfi1ade does this for Text, allowing insertion, deletion, rearrangement and copying of sections of arbitrarily large texts quickly.
 
-The blocks of stuff you might want to do these operations on are represented by sections of the tree, but not necessarily neatly under a single pointer in some high-up node. However, it's always possible to reshape the tree by moving pointers between neighboring nodes, splitting nodes into multiple nodes, etc. Also the same splitting and rejoining operations that happen with regular B-Trees happen with enfilades, when individual records are added or deleted. In general, when you do a massive operation like a rearrange, you separate out the chunks of the tree you are going to change into distinct subtrees, and then swap some pointers and possibly rebalance. The operations of separating out, rejoining and rebalancing subtrees go up and down the sides of the subtrees only, so they are LogLike operations.
+The blocks of stuff you might want to do these operations on are represented by sections of the tree, but not necessarily neatly under a single pointer in some high-up node. However, it's always possible to reshape the tree by moving pointers between neighboring nodes, splitting nodes into multiple nodes, etc. Also the same splitting and rejoining operations that happen with regular B-Trees happen with enfilades, when individual records are added or deleted. In general, when you do a massive operation like a rearrange, you separate out the chunks of the tree you are going to change into distinct subtrees, and then swap some pointers and possibly rebalance. The operations of separating out, rejoining and rebalancing subtrees go up and down the sides of the subtrees only, so they are <a href="LogLike.html">LogLike</a> operations.
 
-In fact, all these operations are LogLike in a ModelT: insert a character, delete an arbitrary range of characters, exchange two arbitrary ranges, copy an arbitrary range. Inserting or reading back N characters at an arbitrary starting point takes something like N + LogLike time. The storage cost of the resulting virtual text varies from O( n + m log n ) (m copies of an n-character text) to O( n ) (one big new text) to O( n log n ) (many copies of small pieces).
+In fact, all these operations are <a href="LogLike.html">LogLike</a> in a <a href="ModelT.html">ModelT</a>: insert a character, delete an arbitrary range of characters, exchange two arbitrary ranges, copy an arbitrary range. Inserting or reading back N characters at an arbitrary starting point takes something like N + <a href="LogLike.html">LogLike</a> time. The storage cost of the resulting virtual text varies from O( n + m log n ) (m copies of an n-character text) to O( n ) (one big new text) to O( n log n ) (many copies of small pieces).
 
 Wids
 
-The wid, short for width, represents a summary or other operation on ranges of stuff in an enfi1ade. Wids are also used to represent the range of positions under a subtree, to decide whether to search within a given subtree. In a ModelT, the wid is just the number of characters in the subtree under some point. To get the number of characters in two adjacent subtrees, you just add. But of course the number of characters in chunks and the relative positions of chunks have a very simple relationship, and at first the need for separate wids and disps wasn't clear.
+The wid, short for width, represents a summary or other operation on ranges of stuff in an enfi1ade. Wids are also used to represent the range of positions under a subtree, to decide whether to search within a given subtree. In a <a href="ModelT.html">ModelT</a>, the wid is just the number of characters in the subtree under some point. To get the number of characters in two adjacent subtrees, you just add. But of course the number of characters in chunks and the relative positions of chunks have a very simple relationship, and at first the need for separate wids and disps wasn't clear.
 
 (Wids and disps tend to be related whenever changing the size of one thing affects the positions of other things, as when you insert a character and all the other characters are moved over.)
 
@@ -52,9 +52,9 @@ To find the position, size and rotation of a thing at the bottom of the tree, it
 
 But what's the combining operation for the wids? Well, at any level of the tree, you look at the bounding circles of the subtrees immediately below and calculate the smallest possible circle that encloses them. You don't have to delve into lower or upper parts of the tree. You just do an operation on nearby neighbors, side-by-side in the tree, and propogate it upwards.
 
-This is a data structure for a draw program, where operations like rotate, scale, move and copy on parts of a drawing take LogLike time. The wids in this design, the bounding circles, help the program know whether a subtree contains stuff within the visible part of the scrolling window (so that off-the-screen parts of the drawing don't have to be uselessly redrawn), or within an area that you select.
+This is a data structure for a draw program, where operations like rotate, scale, move and copy on parts of a drawing take <a href="LogLike.html">LogLike</a> time. The wids in this design, the bounding circles, help the program know whether a subtree contains stuff within the visible part of the scrolling window (so that off-the-screen parts of the drawing don't have to be uselessly redrawn), or within an area that you select.
 
-Wids can do interesting kinds of summary in LogLike time. Here are some kinds of widding operations, (each requiring a correspondingly different enfi1ade):
+Wids can do interesting kinds of summary in <a href="LogLike.html">LogLike</a> time. Here are some kinds of widding operations, (each requiring a correspondingly different enfi1ade):
 
     *
 
@@ -76,7 +76,7 @@ Enfilades and their descendents are also used all through both Udanax Green and 
 
 Dispative and Widative
 
-To build an enfi1ade, you need a kind of disp where you can "add" a disp to a position to get a new position, and "subtract" two positions to get a disp. Like arithmetic on positions in a ModelT, or the operation of combining 2D positions, scales and rotations in the drawing- enfi1ade above. There must be an operation for this that is "dispative", which means associative as you go up and down the tree.
+To build an enfi1ade, you need a kind of disp where you can "add" a disp to a position to get a new position, and "subtract" two positions to get a disp. Like arithmetic on positions in a <a href="ModelT.html">ModelT</a>, or the operation of combining 2D positions, scales and rotations in the drawing- enfi1ade above. There must be an operation for this that is "dispative", which means associative as you go up and down the tree.
 
 Associativity is the property that the operations can be grouped in different ways without affecting the result. For addition, that means that A + (B + C) = (A + B) + C.
 
@@ -86,15 +86,15 @@ Thus dispativity and widativity are both forms of associativity. The reason this
 
 Use with write-once, read-many media
 
-The ease of making copies makes versioning easy (well, okay Roger it doesn't solve the whole problem), and means that you can always do edit operations without changing any of the data that was already written. This has some nice implications for the safety of archives, means you can w0rk nicely with write-once media like cd-roms, and also fits in with the way that contents in Xanadu always have permanent, reliable identities.
+The ease of making copies makes <a href="versioning.html">versioning</a> easy (well, okay Roger it doesn't solve the whole problem), and means that you can always do edit operations without changing any of the data that was already written. This has some nice implications for the safety of archives, means you can w0rk nicely with write-once media like cd-roms, and also fits in with the way that contents in Xanadu always have permanent, reliable identities.
 
 Enfi1ade Compilers
 
 There was a hope that with a sufficiently good theory of enfilades, one could write an "enfi1ade compiler" that would take code to do the disping and widding operations (plus some information about their properties) and generate efficient code for the enfi1ade as a whole. Something like the way theories of parsing and code optimization led to efficient code compilers, or the way "compiler compilers" like yacc and lex let you write a parser-driven program by supplying a grammar plus code fragments for the operations on nodes of the parse tree.
 
-The fact that many algorithms (like pagination and the DelaunayTriangulation) can conceivably be "incrementalized" using enfilades still makes this interesting; I don't know whether any progress was made since the 1980's.
+The fact that many algorithms (like pagination and the <a href="DelaunayTriangulation.html">DelaunayTriangulation</a>) can conceivably be "incrementalized" using enfilades still makes this interesting; I don't know whether any progress was made since the 1980's.
 
-I believe the ability to add new kinds of "AddressSpace?" in an object-oriented way to UdanaxGold potentially provided many of the benefits of "enfi1ade compilers". What would have been a new kind of enfi1ade would be created by defining a class of address space with its widding and disping operations.
+I believe the ability to add new kinds of "AddressSpace?" in an object-oriented way to <a href="UdanaxGold.html">UdanaxGold</a> potentially provided many of the benefits of "enfi1ade compilers". What would have been a new kind of enfi1ade would be created by defining a class of address space with its widding and disping operations.
 Enfilades used in Udanax Gold
 
     *
@@ -112,5 +112,5 @@ Enfilades used in Udanax Gold
 
 --SteveWitham?
 
-[1] Later versions (see Ent) used variants of the SplayTree --JohnDougan?
+[1] Later versions (see Ent) used variants of the <a href="SplayTree.html">SplayTree</a> --JohnDougan?
 </body></html>
