@@ -18,7 +18,7 @@ The same mechanism that finds correspondences between versions of documents is u
 </p><p>
 The way Xanadu traces links and commonalities quickly is this: every original piece of stuff is stored (conceptually) at a single location called its IStream? (invariant stream) address. Documents and links are basically indexes from virtual (VStream?) addresses into the IStream?. Tracing between documents is done by first tracing ranges of VStream? addresses to ranges of IStream? addresses, then backwards through the indexes to VStream? addresses in the target documents.
 </p><p>
-V --> I --> V
+V --&gt; I --&gt; V
 </p><p>
 That means that no matter how much history has happened between documents or links we're tracing between, the same two-step process gets you from one to another. So a link that I made from the original of my document to the original of your document still works fine between the much-changed current versions of our documents.
 </p><p>

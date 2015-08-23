@@ -1,6 +1,6 @@
 <html><head><title>CoordinateSpaces</title></head><body><p>
-  Whiteboard: <a href="CoordinateSpaces.html">CoordinateSpaces</a>    	  last revised by 127.0.0.1 on Aug 17, 2005 2:27 am     	
-</p><p>		
+  Whiteboard: <a href="CoordinateSpaces.html">CoordinateSpaces</a>    	  last revised by 127.0.0.1 on Aug 17, 2005 2:27 am
+</p><p>
 </p><p>
     * Heaper
           o Arrangement
@@ -20,7 +20,7 @@
 </p><p>
             When defining a new coordinate space class, one generally defines new corresponding subclasses of each of the above classes. A kind of any of the above classes knows what coordinate space it is a part of (the "coordinateSpace()" message will yield an appropriate kind of CoordinateSpace?). CoordinateSpace? objects exist mostly just to represent this commonality. Coordinate spaces are disjoint -- it is an error to use any of the generic protocol of any of the above classes if the objects in question are of two different coordinate spaces.
 </p><p>
-            For example, "dsp->of (pos)" is not an error iff "dsp->coordinateSpace()->isEqual(pos->coordinateSpace())".
+            For example, "dsp-&gt;of (pos)" is not an error iff "dsp-&gt;coordinateSpace()-&gt;isEqual(pos-&gt;coordinateSpace())".
 </p><p>
             Note that this class is not COPY or even PSEUDO_COPY. All of the instance variables for CoordinateSpace? are basically cached quantities that require vary little actual state from the derived classes in order to be constructed. This realization allows a knot to be untangled when reading these objects from external storage."""
                 + BasicSpace? """BasicSpace? versus CoordinateSpace? is not a type distinction in that there is no difference in contract with the client. BasicSpace? exists as a convenience to the definer of new <a href="CoordinateSpaces.html">CoordinateSpaces</a>. A new subclass of CoordinateSpace? should be a subclass of BasicSpace? iff there is only one coordinateSpace that corresponds to the new class, i.e. that the instances are not parameterized to yield different coordinate spaces. BasicSpace? provides some conveniences (especially in Smalltalk) for defining a single canonical instance at dynamic initialization time, and always using it.
@@ -145,17 +145,17 @@
 </p><p>
             1) The simplest are the distinctions. Distinctions are those that answer with (at most) a single set containing themselves in response to the message "distinctions". (The reason I say "at most" is that a full region (one that covers the entire coordinate space) may answer with the empty set.) Distinctions are the simplest XuRegions? of a given space out of which all other XuRegions? of that space can be finitely composed. There should probably be a message "isDistinction" for which exactly the distinctions answer "true". The complement of a distinction is a distinction. Three examples of distinctions in spaces are:
 </p><p>
-            a) in IntegerSpace?, any simple inequality. For example, all integers < 37. b) in one kind of 3-space, any half space (all the space on one side of some plane) c) in another kind of 3-space, any sphere or spherical hole.
+            a) in IntegerSpace?, any simple inequality. For example, all integers &lt; 37. b) in one kind of 3-space, any half space (all the space on one side of some plane) c) in another kind of 3-space, any sphere or spherical hole.
 </p><p>
             Note that "c" could not just have spheres as the distinction because distinctions must be closed under complement. (We are here ignoring the quite substantial problems that arise in dealing with approximate (e.g., floating point) which would almost necessarily have to arise in doing any decent 3-space. 3-space is nevertheless a good intuition pump.)
 </p><p>
             2) Next are the simple regions. Simple regions are exactly those that say "true" to "isSimple". All distinctions are also simple regions. In response to the message "distinctions", and simple region must return a finite set of distinctions which, when intersected together, yield the original simple region. Generally, one tries to define the simple regions for a space to correspond to some notion of locality in the space. For example, it may be good for a simple region not to be able to have a hole in it. Or perhaps a simple region is which must be connected (whatever that means in a given space). Example non-distinction simple regions for the above example spaces would be:
 </p><p>
-            a) The interval from 3 inclusive to 17 exclusive (intersection of all integers >= 3 and all < 17) b) A convex hull (intersection of half spaces) c) Whatever you get by intersecting a bunch of spheres a           The simple regions for both "a" and "b" would be connected, without holes, and even convex. This follows directly from the definition of our distinctions. None of these nice properties holds for "c", and this also follows directly from our decision to start with spheres. "c" is still perfectly valid, just less preferable by some criteria.
+            a) The interval from 3 inclusive to 17 exclusive (intersection of all integers &gt;= 3 and all &lt; 17) b) A convex hull (intersection of half spaces) c) Whatever you get by intersecting a bunch of spheres a           The simple regions for both "a" and "b" would be connected, without holes, and even convex. This follows directly from the definition of our distinctions. None of these nice properties holds for "c", and this also follows directly from our decision to start with spheres. "c" is still perfectly valid, just less preferable by some criteria.
 </p><p>
             3) Finally, there are the regions of a space in general. Any region must respond to the message "simpleRegions" with a stepper which will produce a finite number of simple regions that, when unioned together, yields the original region. A simple region will return a stepper that will return at most itself ("at most" because an empty region (which covers no positions) may return an empty stepper). Example non-simple regions are:
 </p><p>
-            a) all integers < 3 and all integers >= 17 b) two convex hulls c) two disjoint spheres
+            a) all integers &lt; 3 and all integers &gt;= 17 b) two convex hulls c) two disjoint spheres
 </p><p>
             Note that "a" is the complement of the earlier "a" example, thereby showing why the complement of a simple region isn`t necessarily simple. Even though the "c" space is so unconstrained in the properties of its simple regions, there is no way to interect a finite number of spheres and spherical holes to produce a pair of disjoint spheres. Therefore the pair is non-simple. Not all spaces must have non-simple regions (or even non-distinctions). It is interesting to observe for "b" and "c" that even though there is a natural conversion between their respective positions, (except for the empty and full regions) there is no conversion at all between their respective regions. The kinds of sets of positions representable in one space is completely different than those representable in the other space.
 </p><p>
@@ -165,14 +165,14 @@
 </p><p>
                 + GenericCrossRegion? """Represents a region as a two-dimensional array of crosses of subregions. Was NOT.A.TYPE but that obstructed compilation. I think this might work better if the array is lexically sorted, but I am not sure there is any meaningful way to do so. Thus there is no sorting assumed in the algorithms, although the protocol may occasionally suggest that there might be.
 </p><p>
-                  Eventually this implementation may save space by using NULL to represent repetitions of a sub region such that fetchBoxProjection (box, dim) == NULL only if box > 0 && boxProjection(box, dim)->isEqual(boxProjection (box - 1, dim)) && (dim == 0 || fetchBoxProjection(box, dim - 1) == NULL)."""
+                  Eventually this implementation may save space by using NULL to represent repetitions of a sub region such that fetchBoxProjection (box, dim) == NULL only if box &gt; 0 &amp;&amp; boxProjection(box, dim)-&gt;isEqual(boxProjection (box - 1, dim)) &amp;&amp; (dim == 0 || fetchBoxProjection(box, dim - 1) == NULL)."""
 </p><p>
                       # Filter """A position in a FilterSpace? is a region in the baseSpace, and a filter is a set of regions in the baseSpace. It is often more useful to think of a Filter as a Boolean function whose input is a region in the baseSpace, and of unions, intersections, and complements of filters as ORs?, ANDs?, and NOTs? of functions. Not all possible such functions can be represented as Filters, since there is an uncountable infinity of them for any non-finite CoordinateSpace?. There are representations for some basic filters, and any filters resulting from a finite sequence of unions, intersections, and complements among them. The basic filters are:
 </p><p>
                         subsetFilter(cs,R)
-                            all subsets of R (i.e. all R1 such that R1->isSubsetOf(R)) supersetFilter(cs,R) -- all supersets of R (i.e. all R1 such that R->isSubsetOf(R1))
+                            all subsets of R (i.e. all R1 such that R1-&gt;isSubsetOf(R)) supersetFilter(cs,R) -- all supersets of R (i.e. all R1 such that R-&gt;isSubsetOf(R1))
 </p><p>
-                        Mathematically, this is all that is necessary, since other useful filters like intersection filters can be generated from these. (e.g. intersectionFilter(R) is subsetFilter(R->complement())->complement()). However, there are several more pseudo constructors provided as shortcuts, including intersectionFilters, closedFilters, emptyFilters, and intersections and unions of sets of filters."""
+                        Mathematically, this is all that is necessary, since other useful filters like intersection filters can be generated from these. (e.g. intersectionFilter(R) is subsetFilter(R-&gt;complement())-&gt;complement()). However, there are several more pseudo constructors provided as shortcuts, including intersectionFilters, closedFilters, emptyFilters, and intersections and unions of sets of filters."""
 </p><p>
                             * ClosedFilter?
                             * Not<a href="SubsetFilter.html">SubsetFilter</a>?

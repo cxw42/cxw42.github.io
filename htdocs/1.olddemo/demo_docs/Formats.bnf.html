@@ -1,69 +1,68 @@
 <html><head><title>Formats.bnf</title></head><body><p>
-</p><p> 
 </p><p>
-</p><p> 
 </p><p>
-</p><p> 
 </p><p>
-            Appendix III  Formats for 
-information exchanged between the 
-back-end and the front-end in the 
-current implementation of the Xanadu 
-hypertext system. 
 </p><p>
-<wdelim>  ::= '0 
 </p><p>
-<a href="Tumblers.html">Tumblers</a> 
 </p><p>
-  <tumbler>      ::= <texp> 
-<tumblerdigit>* <wdelim> 
-  <texp>         ::= <integer> 
-  <tumblerdigit> ::= <tdelim> 
-<integer> 
-  <tdelim>       ::= '.' 
+            Appendix III  Formats for
+information exchanged between the
+back-end and the front-end in the
+current implementation of the Xanadu
+hypertext system.
 </p><p>
-<a href="Addresses.html">Addresses</a> 
+&lt;wdelim&gt;  ::= '0
 </p><p>
-  <doc id>    ::= <tumbler> 
-  <doc set>   ::= <ndocs> <doc id>* 
-  <link id>   ::= <tumbler> 
-  <doc vsa>   ::= <tumbler> 
-  <span set>  ::= <nspans> <span>* 
-  <span>      ::= <tumbler> <tumbler> 
-  <spec set>  ::= <nspecs> <spec>* 
-  <spec>      ::= <spec id> { <vspec> 
-| <span> } 
-  <spec id>   ::= { 's' | 'v' } 
-<wdelim> 
-                  /* v for vspec, s 
-for span */ 
-  <vspec set> ::= <nvspecs> <vspec>* 
-  <vspec>     ::= <doc id> <vspan 
-set> 
-  <vspan set> ::= <nspans> <vspan>* 
-  <vspan>     ::= <span> 
-  <ndocs>     ::= <integer> <wdelim> 
-  <nspecs>    ::= <integer> <wdelim> 
-  <nvspecs>   ::= <integer> <wdelim> 
-  <nspans>    ::= <integer> <wdelim> 
+Tumblers
 </p><p>
-Stuff 
+  &lt;tumbler&gt;      ::= &lt;texp&gt;
+&lt;tumblerdigit&gt;* &lt;wdelim&gt;
+  &lt;texp&gt;         ::= &lt;integer&gt;
+  &lt;tumblerdigit&gt; ::= &lt;tdelim&gt;
+&lt;integer&gt;
+  &lt;tdelim&gt;       ::= '.'
 </p><p>
-  <vstuffset> ::= <nthings> <vthing>* 
-  <vthing>    ::= <text> | <link id> 
-  <text set>  ::= <ntexts> <text>* 
-  <ntexts>    ::= <integer> <wdelim> 
-  <text>      ::= <textflag> <nchars> 
-<char>* ?<wdelim> 
-  <textflag>  ::= 't' 
-  <nchars>    ::= <integer> <wdelim> 
-  <nthings>   ::= <integer> <wdelim> 
+Addresses
 </p><p>
-Link stuff 
+  &lt;doc id&gt;    ::= &lt;tumbler&gt;
+  &lt;doc set&gt;   ::= &lt;ndocs&gt; &lt;doc id&gt;*
+  &lt;link id&gt;   ::= &lt;tumbler&gt;
+  &lt;doc vsa&gt;   ::= &lt;tumbler&gt;
+  &lt;span set&gt;  ::= &lt;nspans&gt; &lt;span&gt;*
+  &lt;span&gt;      ::= &lt;tumbler&gt; &lt;tumbler&gt;
+  &lt;spec set&gt;  ::= &lt;nspecs&gt; &lt;spec&gt;*
+  &lt;spec&gt;      ::= &lt;spec id&gt; { &lt;vspec&gt;
+| &lt;span&gt; }
+  &lt;spec id&gt;   ::= { 's' | 'v' }
+&lt;wdelim&gt;
+                  /* v for vspec, s
+for span */
+  &lt;vspec set&gt; ::= &lt;nvspecs&gt; &lt;vspec&gt;*
+  &lt;vspec&gt;     ::= &lt;doc id&gt; &lt;vspan
+set&gt;
+  &lt;vspan set&gt; ::= &lt;nspans&gt; &lt;vspan&gt;*
+  &lt;vspan&gt;     ::= &lt;span&gt;
+  &lt;ndocs&gt;     ::= &lt;integer&gt; &lt;wdelim&gt;
+  &lt;nspecs&gt;    ::= &lt;integer&gt; &lt;wdelim&gt;
+  &lt;nvspecs&gt;   ::= &lt;integer&gt; &lt;wdelim&gt;
+  &lt;nspans&gt;    ::= &lt;integer&gt; &lt;wdelim&gt;
 </p><p>
-  <from set> ::= <spec set> 
-  <to set>   ::= <spec set> 
-  <home set> ::= <spec set> 
-  <link set> ::= <nlinks> <link id>* 
-  <nlinks>   ::= <integer> <wdelim> 
-</p></body></html>
+Stuff
+</p><p>
+  &lt;vstuffset&gt; ::= &lt;nthings&gt; &lt;vthing&gt;*
+  &lt;vthing&gt;    ::= &lt;text&gt; | &lt;link id&gt;
+  &lt;text set&gt;  ::= &lt;ntexts&gt; &lt;text&gt;*
+  &lt;ntexts&gt;    ::= &lt;integer&gt; &lt;wdelim&gt;
+  &lt;text&gt;      ::= &lt;textflag&gt; &lt;nchars&gt;
+&lt;char&gt;* ?&lt;wdelim&gt;
+  &lt;textflag&gt;  ::= 't'
+  &lt;nchars&gt;    ::= &lt;integer&gt; &lt;wdelim&gt;
+  &lt;nthings&gt;   ::= &lt;integer&gt; &lt;wdelim&gt;
+</p><p>
+Link stuff
+</p><p>
+  &lt;from set&gt; ::= &lt;spec set&gt;
+  &lt;to set&gt;   ::= &lt;spec set&gt;
+  &lt;home set&gt; ::= &lt;spec set&gt;
+  &lt;link set&gt; ::= &lt;nlinks&gt; &lt;link id&gt;*
+  &lt;nlinks&gt;   ::= &lt;integer&gt; &lt;wdelim&gt;
