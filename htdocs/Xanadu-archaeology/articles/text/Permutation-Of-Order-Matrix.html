@@ -14,7 +14,7 @@ What it Does
 </p><p>
 Imagine the first version of a document was typed all from scratch with no hesitation, backspaces or edits. Then all the characters typed get assigned a contiguous range of istream positions, and the POOM for this version is just a straight line:
 </p><p>
-<tt>
+<pre>
    |        /
    |      /
 I  |    /
@@ -22,11 +22,11 @@ I  |    /
    |/
    +----------
         V
-</tt>
+</pre>
 </p><p>
 In the POOM enfilade, no matter what the size of this document, this simple map is represented by a single crum at the bottom of the tree that says the starting V and I addresses, and the length. In general, each line segment in this map requires one bottom crum, and all the line segments are at a 45 degree angle. So now the author makes a second version with a new introduction:
 </p><p>
-<tt>
+<pre>
    |/
    |          /
    |        /
@@ -35,11 +35,11 @@ I  |      /
    |  /
    +------------
          V
-</tt>
+</pre>
 </p><p>
 The newer part has a higher I address, but it's V address is zero within this new version. Next the author realizes that a section near the beginning needs to be repeated near the end, so they do a copy and paste--within a Xanadu- savvy editor that knows how to instruct the back end to do a virtual copy, not by reentering the same characters:
 </p><p>
-<tt>
+<pre>
    |/
    |            /
    |        /
@@ -48,7 +48,7 @@ I  |      /
    |  /
    +--------------
           V
-</tt>
+</pre>
 </p><p>
 I'll stop with the complications here. You can imagine the potential fractal filligries that could develop over time on a well-edited document. (In this page, the typewriter pictures are modified copies, for instance.)
 </p><p>
@@ -68,7 +68,7 @@ The editing operations are always to insert, delete, rearrange or copy tall rect
 </p><p>
 A result of editing is also not seen in 1D enfilades: the data in different subtrees can have overlapping bounding boxes. That means that to access certain 2D address ranges you have to search down multiple parts of the tree. You may also come upon dead ends: the bounding box of a higher subtree may intersect your query rectangle, but further down you may run out of subtrees that do. Here's a crude example:
 </p><p>
-<tt>
+<pre>
    |     +--------+ B
    |/    |  /     |
    |     |      / |
@@ -78,7 +78,7 @@ I  |     |/       |
    |  /  
    +--------------
           V
-</tt>
+</pre>
 </p><p>
 Here the line of equals labeled Q represents a query with a narrow horizontal rectangle. The bounding box B intersects Q but none of the bottom-level data within it does.
 </p><p>

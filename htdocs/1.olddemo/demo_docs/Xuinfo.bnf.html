@@ -1,71 +1,65 @@
-<html><head><title>Xuinfo.bnf</title></head><body><p>
-</p><p> 
-</p><p>
-</p><p> 
-</p><p>
-</p><p> 
-</p><p>
-</p><p> 
-         Appendix IV 
+<html><head><title>Xuinfo.bnf</title></head><body>
+         <h1>Appendix IV</h1>
+<p>
 Xanadu Hypertext 
 Calls to Back-end -- 
 BNF 
 </p>
-<tt>
+<pre>
 <p>
  CREATENEWDOCUMENT ::= 
 &lt;createdocrequest&gt; 
   returns &lt;createdocrequest&gt; &lt;doc id&gt; 
-</p><p>
+
   &lt;createdocrequest&gt; ::= 11 &lt;wdelim&gt; 
-</p><p>
+
     This creates an empty document, 
 returns the id of the new document. 
-</p><p>
+
  CREATENEWVERSION ::= 
 &lt;createversionrequest&gt; &lt;doc id&gt; 
   returns &lt;createversionrequest&gt; &lt;doc 
 id&gt; 
-</p><p>
+
   &lt;createversionrequest&gt; ::= 13 
 &lt;wordelim&gt; 
-</p><p>
+
     This creates a new document with 
 the contents of document &lt;doc id&gt;, 
   it returns the id of the new 
 document.  The new document's id will 
   indicate it's ancestory. 
-</p><p>
+
  INSERT ::= &lt;insertrequest&gt; &lt;doc id&gt; 
 &lt;doc vsa&gt; &lt;text set&gt; 
   returns &lt;insertrequest&gt; 
-</p><p>
+
   &lt;insertrequest&gt; ::= 0 &lt;wdelim&gt; 
-</p><p>
+
     This inserts &lt;text set&gt; in 
 document &lt;doc id&gt; at &lt;doc vsa&gt;, the 
  v-stream addresses of any following 
 characters are increased by the 
  length of the inserted text. 
-</p><p>
+
  DELETEVSPAN ::= &lt;deleterequest&gt; &lt;doc 
 id&gt; &lt;span&gt; 
   returns &lt;deleterequest&gt; 
-</p><p>
+
   &lt;deleterequest&gt; ::= 12 &lt;wdelim&gt; 
-</p><p>
+
     This removes the given span from 
 the given document. 
-</p><p>
+
  REARRANGE ::= &lt;rearrangerequest&gt; 
 &lt;doc id&gt; &lt;cut set&gt; 
   returns &lt;rearrangerequest&gt; 
-</p><p>
+
   &lt;rearrangerequest&gt; ::= 3 &lt;wdelim&gt; 
   &lt;cut set&gt; ::= &lt;ncuts&gt; &lt;doc vsa&gt;* 
   &lt;ncuts&gt; ::= &lt;integer&gt; &lt;wdelim&gt;      
 /* ncuts = 3 or 4 */ 
-</p><p>
+
     The &lt;cut set&gt; consists of two to 
 four v-addresses within the 
  specified document.  A two cut 
@@ -80,111 +74,111 @@ assuming cut 1 &lt; cut 2 &lt; cut 3.
 cut 1 to cut 2, and from cut 3 
  to cut 4, here assuming cut 1 &lt; cut 
 2 and cut 3 &lt; cut 4. 
-</p><p>
+
 COPY ::= &lt;copyrequest&gt; &lt;doc id&gt; &lt;doc 
 vsa&gt; &lt;spec set&gt; 
   returns &lt;copyrequest&gt; 
-</p><p>
+
   &lt;copyrequest&gt; ::= 2 &lt;wdelim&gt; 
-</p><p>
+
     The material determined by &lt;spec 
 set&gt; is copied to the document 
  determined by &lt;doc id&gt; at the 
 address determined by &lt;doc vsa&gt;. 
-</p><p>
+
  APPEND ::= &lt;appendrequest&gt; &lt;text 
 set&gt; &lt;doc id&gt; 
   returns &lt;appendrequest&gt; 
-</p><p>
+
   &lt;appendrequest&gt; ::= 19 &lt;wdelim&gt; 
-</p><p>
+
     This appends &lt;text set&gt; onto the 
 end of the text space of the 
  document &lt;doc id&gt;. 
-</p><p>
+
  RETRIEVEV ::= &lt;retrieverequest&gt; 
 &lt;spec set&gt; 
   returns &lt;retrieverequest&gt; 
 &lt;vstuffset&gt; 
-</p><p>
+
   &lt;retrieverequest&gt; ::= 5 &lt;wdelim&gt; 
-</p><p>
+
     This returns the material (text 
 and links) determined by 
  &lt;spec set&gt;. 
-</p><p>
+
  RETRIEVEDOCVSPAN ::= 
 &lt;docvspanrequest&gt; &lt;doc id&gt; 
   returns &lt;docvspanrequest&gt; &lt;vspan&gt; 
-</p><p>
+
   &lt;docvspanrequest&gt; ::= 14 &lt;wdelim&gt; 
-</p><p>
+
     This returns a span determining 
 the origin and extent of the 
  vstream of document &lt;doc id&gt;. 
-</p><p>
+
  RETRIEVEDOCVSPANSET ::= 
 &lt;docvspansetrequest&gt; &lt;doc id&gt; 
   returns &lt;docvspansetrequest&gt; 
 &lt;vspanset&gt; 
-</p><p>
+
   &lt;docvspansetrequest&gt; ::= 1 &lt;wdelim&gt; 
   &lt;vspanset&gt; ::= &lt;nspans&gt; &lt;vspan&gt;* 
-</p><p>
+
     This returns a span-set 
 indicating both the number of 
 characters 
  of text and the number of links in 
 document &lt;doc id&gt;. 
-</p><p>
+
  MAKELINK ::= &lt;makelinkrequest&gt; &lt;doc 
 id&gt; &lt;doc vsa&gt; &lt;from set&gt; &lt;to set&gt; 
   returns &lt;makelinkrequest&gt; &lt;link id&gt; 
-</p><p>
+
   &lt;makelinkrequest&gt; ::= 4 &lt;wdelim&gt; 
-</p><p>
+
     This creates a link in document 
 &lt;doc id&gt; from &lt;from set&gt; to 
  &lt;to set&gt;.  It returns the id of the 
 link made. 
-</p><p>
+
  FINDLINKSFROMTO ::= &lt;linksrequest&gt; 
 &lt;home set&gt; &lt;from set&gt; &lt;to set&gt; 
   returns &lt;linksrequest&gt; &lt;link set&gt; 
-</p><p>
+
   &lt;linksrequest&gt; ::= 7 &lt;wdelim&gt; 
-</p><p>
+
     This returns a list of all links 
 which are (1) in &lt;home set&gt;, 
  (2) from all 
   or any part of &lt;from set&gt; and (3) 
 to all or any part of &lt;to set&gt;. 
-</p><p>
+
  FINDNUMOFLINKSFROMTO ::= 
 &lt;nlinksrequest&gt; &lt;home set&gt; &lt;from set&gt; 
 &lt;to set&gt; 
   returns &lt;nlinksrequest&gt; &lt;nlinks&gt; 
-</p><p>
+
   &lt;nlinksrequest&gt; ::= 6 &lt;wdelim&gt; 
-</p><p>
+
     This returns the number of links 
 which are (1) in &lt;home set&gt;, 
  (2) from all or any part of &lt;from 
 set&gt; and (3) to all or any part 
  of &lt;to set&gt;. 
-</p><p>
+
  FINDNEXTNLINKSFROMTO ::= 
 &lt;nextnlinksrequest&gt; &lt;from set&gt; &lt;to 
 set&gt; 
-</p><p>
+
                          &lt;home set&gt; 
 &lt;link id&gt; &lt;nlinks&gt; 
-</p><p>
+
   returns &lt;nextnlinksrequest&gt; 
 &lt;linkset&gt; 
-</p><p>
+
   &lt;nextnlinksrequest&gt; ::= 8 &lt;wdelim&gt; 
-</p><p>
+
     This returns a list of all links 
 which are (1) in the list 
  determined by &lt;from set&gt;, &lt;to set&gt;, 
@@ -193,25 +187,25 @@ and &lt;home set&gt; as in
 given by &lt;linkisa&gt; on that list 
  and (3) no more than &lt;n&gt; items past 
 that link on that list 
-</p><p>
+
  RETRIEVEENDSETS ::= 
 &lt;retrieveendsetsrequest&gt; &lt;spec set&gt; 
   returns &lt;retrieveendsetsrequest&gt; 
 &lt;from spec set&gt; &lt;to spec set&gt; 
-</p><p>
+
   &lt;retrieveendsetsrequest&gt; ::= 26 
   &lt;from spec set&gt; ::= &lt;spec set&gt; 
   &lt;to spec set&gt; ::= &lt;spec set&gt; 
-</p><p>
+
     This returns a list of all link 
 end-sets that are in &lt;spec set&gt;. 
-</p><p>
+
  SHOWRELATIONOF2VERSIONS ::= 
 &lt;showrelationrequest&gt; &lt;spec set&gt; 
 &lt;spec set&gt; 
   returns &lt;showrelationrequest&gt; 
 &lt;correspondence list&gt; 
-</p><p>
+
   &lt;showrelationrequest&gt; ::= 10 
 &lt;wdelim&gt; 
   /* this is a wild guess at the 
@@ -222,32 +216,31 @@ vague form of the response */
   &lt;item&gt; ::= &lt;doc id&gt; &lt;vspan&gt; 
   &lt;ncorrespondences&gt; ::= &lt;integer&gt; 
 &lt;wdelim&gt; 
-</p><p>
+
     This returns a list of ordered 
 pairs of the spans of the two 
  spec-sets that correspond. 
-</p><p>
+
  FINDDOCSCONTAINING ::= 
 &lt;docscontainingrequest&gt; &lt;vspec set&gt; 
   returns &lt;docscontainingrequest&gt; 
 &lt;doc set&gt; 
-</p><p>
+
   &lt;docscontainingrequest&gt; ::= 22 
 &lt;wdelim&gt; 
-</p><p>
+
     This returns a list of all 
 documents containing any portion of 
  the material included by &lt;vspec 
 set&gt;. 
-</p><p>
+
  NAVIGATEONHT ::= 
 &lt;navigateonhtrequest&gt; &lt;totally 
 undefined&gt; 
   returns &lt;navigateonhtrequest&gt; 
 &lt;totally undefined&gt; 
-</p><p>
+
     This re-edits a document to any 
 point in its editing history. 
-</p>
-</tt>
+</pre>
 </body></html>

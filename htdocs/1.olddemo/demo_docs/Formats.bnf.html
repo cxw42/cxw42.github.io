@@ -1,31 +1,25 @@
-<html><head><title>Formats.bnf</title></head><body><p>
-</p><p>
-</p><p>
-</p><p>
-</p><p>
-</p><p>
-</p><p>
-            Appendix III  Formats for
+<html><head><title>Formats.bnf</title></head><body>
+            <h1>Appendix III</h1>
+<p>  Formats for
 information exchanged between the
 back-end and the front-end in the
 current implementation of the Xanadu
 hypertext system.
 </p>
-<tt>
-<p>
+<pre>
 &lt;wdelim&gt;  ::= '0
-</p><p>
+
 Tumblers
-</p><p>
+
   &lt;tumbler&gt;      ::= &lt;texp&gt;
 &lt;tumblerdigit&gt;* &lt;wdelim&gt;
   &lt;texp&gt;         ::= &lt;integer&gt;
   &lt;tumblerdigit&gt; ::= &lt;tdelim&gt;
 &lt;integer&gt;
   &lt;tdelim&gt;       ::= '.'
-</p><p>
+
 Addresses
-</p><p>
+
   &lt;doc id&gt;    ::= &lt;tumbler&gt;
   &lt;doc set&gt;   ::= &lt;ndocs&gt; &lt;doc id&gt;*
   &lt;link id&gt;   ::= &lt;tumbler&gt;
@@ -48,9 +42,9 @@ set&gt;
   &lt;nspecs&gt;    ::= &lt;integer&gt; &lt;wdelim&gt;
   &lt;nvspecs&gt;   ::= &lt;integer&gt; &lt;wdelim&gt;
   &lt;nspans&gt;    ::= &lt;integer&gt; &lt;wdelim&gt;
-</p><p>
+
 Stuff
-</p><p>
+
   &lt;vstuffset&gt; ::= &lt;nthings&gt; &lt;vthing&gt;*
   &lt;vthing&gt;    ::= &lt;text&gt; | &lt;link id&gt;
   &lt;text set&gt;  ::= &lt;ntexts&gt; &lt;text&gt;*
@@ -60,14 +54,13 @@ Stuff
   &lt;textflag&gt;  ::= 't'
   &lt;nchars&gt;    ::= &lt;integer&gt; &lt;wdelim&gt;
   &lt;nthings&gt;   ::= &lt;integer&gt; &lt;wdelim&gt;
-</p><p>
+
 Link stuff
-</p><p>
+
   &lt;from set&gt; ::= &lt;spec set&gt;
   &lt;to set&gt;   ::= &lt;spec set&gt;
   &lt;home set&gt; ::= &lt;spec set&gt;
   &lt;link set&gt; ::= &lt;nlinks&gt; &lt;link id&gt;*
   &lt;nlinks&gt;   ::= &lt;integer&gt; &lt;wdelim&gt;
-</p>
-</tt>
+</pre>
 </body></html>
