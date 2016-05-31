@@ -1,0 +1,36 @@
+<html><head><title>Linky!</title></head>
+<script type="text/javascript"><!--
+function dochange()
+{
+    var i = document.getElementById("in");
+    var o = document.getElementById("out");
+    o.href = i.value;
+} //dochange()
+--></script>
+<body>
+<form>
+<label>Enter a URL:</label>
+<input type="text" name="in" id="in" onChange="dochange()"></input>
+</form>
+<br>
+Here's the link: <a href="#" name="out" id="out">linky</a>  
+&#x2190; right-click or do whatever you want.
+
+<br>
+<h2>Why?</h2>
+Because sometimes you want to save the target of a URL without opening 
+it in the browser first.  Pasting the URL into the address bar doesn't
+create an actual link, which is what you need.  (See, e.g., 
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=62253">this request</a>
+to add such a feature to Firefox.)  So here you go!
+</body>
+<hr>
+Copyright (c) 2016 <a href="https://devwrench.wordpress.com">cxw</a> of 
+<a href="https://bitbucket.org/inclinescene/public">Incline</a>.
+Made by hand in vim.  Code lives <a href="https://github.com/cxw42/cxw42.github.io">here</a>.
+<br>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+</html>
+
+<!-- vi: set ts=4 sts=4 sw=4 et ai: -->
+
