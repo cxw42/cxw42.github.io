@@ -1,5 +1,5 @@
 <html><head><title>Linky!</title></head>
-<script type="text/javascript"><!--
+<script type="text/javascript">
 function dochange()
 {
     var i = document.getElementById("in");
@@ -8,11 +8,30 @@ function dochange()
     o.href = i.value;
     s.href = "view-source:" + i.value; 
 } //dochange()
---></script>
-<body onload="dochange()">
+
+function doload()
+{
+    if(location.search.length>1) {  // if there's a query string...
+        var i = document.getElementById("in");
+        i.value = location.search.substring(1); // chop the leading "?"
+        dochange();     //update the links
+    }
+} //doload()
+
+function addprefix(prefix)
+{
+    var i = document.getElementById("in");
+    i.value = prefix + i.value;
+    dochange();
+} //addprefix
+
+</script>
+<body onload="doload()">
 <form>
 <label>Enter a URL:</label>
-<input type="text" name="in" id="in" onChange="dochange()"></input>
+<input type="text" name="in" id="in" onChange="dochange()"></input> &bull;
+<a href="#" onclick="addprefix('https://')">+https://</a> &bull;
+<a href="#" onclick="addprefix('http://')">+http://</a>
 </form>
 <br>
 Here's the link: <a href="#" name="out" id="out">linky</a>  
