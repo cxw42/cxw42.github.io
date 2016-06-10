@@ -6,14 +6,18 @@ function dochange()
     var o = document.getElementById("out");
     var s = document.getElementById("viewsource");
     o.href = i.value;
-    s.href = "view-source:" + i.value; 
+    s.href = "view-source:" + i.value;
 } //dochange()
 
 function doload()
 {
     if(location.search.length>1) {  // if there's a query string...
         var i = document.getElementById("in");
-        i.value = location.search.substring(1); // chop the leading "?"
+        var urlstr = location.search.substring(1); // chop the leading "?"
+        urlstr = decodeURIComponent(urlstr);
+            // since the query string gets encoded as a component
+            // (e.g., http%3A%2F%2F...)
+        i.value = urlstr;
         dochange();     //update the links
     }
 } //doload()
@@ -34,25 +38,26 @@ function addprefix(prefix)
 <a href="#" onclick="addprefix('http://')">+http://</a>
 </form>
 <br>
-Here's the link: <a href="#" name="out" id="out">linky</a>  
-&#x2190; right-click or do whatever you want.  
-Or you can 
+Here's the link: <a href="#" name="out" id="out">linky</a>
+&#x2190; right-click or do whatever you want.
+Or you can
 <a href="#" name="viewsource" id="viewsource">view the target's source</a>
 (works at least in Chrome and Firefox).
 
 <br>
 <h2>Why?</h2>
-Because sometimes you want to save the target of a URL without opening 
+Because sometimes you want to save the target of a URL without opening
 it in the browser first.  Pasting the URL into the address bar doesn't
-create an actual link, which is what you need.  (See, e.g., 
+create an actual link, which is what you need.  (See, e.g.,
 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=62253">this request</a>
 to add such a feature to Firefox.)  So here you go!
 </body>
 <hr>
-Copyright (c) 2016 <a href="https://devwrench.wordpress.com">cxw</a> of 
-<a href="https://bitbucket.org/inclinescene/public">Incline</a>.
-Made by hand in <a href="http://www.vim.org/">vim</a>.  
-Code lives <a href="https://github.com/cxw42/cxw42.github.io">here</a>.
+Copyright (c) 2016 <a href="https://devwrench.wordpress.com">cxw</a> of
+<a href="https://bitbucket.org/inclinescene/public">Incline</a> &bull;
+<a href="http://stackexchange.com/users/3433783/cxw">Stack Exchange</a> &bull;
+Made by hand in <a href="http://www.vim.org/">vim</a> &bull;
+Code lives <a href="https://github.com/cxw42/cxw42.github.io">here</a>
 <br>
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </html>
