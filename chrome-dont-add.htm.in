@@ -1,0 +1,28 @@
+<?# Process with perlpp, https://github.com/interpreters/perlpp
+?><html>
+<head><title>Tests of chrome-dont-add-custom-search-engines</title></head>
+<body>
+<?
+    my $formidx = 0;
+
+    for my $method ('', 'get') {
+        for my $action (undef, '', 'foo', '/bar', 'http://example.com/bat',
+                        'https://example.com/quux', 'ftp://example.com/quuux') {
+            for my $input_type ('text', 'search') {
+                for my $attr ('id', 'name') {
+                    for my $name ('q', 'action') {
+?>
+    <form id="f<?=++$formidx?>" <?= $method && 'method="get"' ?>
+        <?= defined($action) && qq(action="$action") ?> >
+        <input type="<?=$input_type?>" <?=$attr?>="<?=$name?>" />
+        <input type="submit" value="Submit form <?=$formidx?>" />
+    </form>
+<?
+                    }
+                }
+            }
+        }
+    }
+?>
+</body>
+<!-- vi: set ts=4 sts=4 sw=4 et ai: -->

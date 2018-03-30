@@ -1,0 +1,678 @@
+<html>
+<head><title>Tests of chrome-dont-add-custom-search-engines</title></head>
+<body>
+
+    <form id="f1" 
+         >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 1" />
+    </form>
+
+    <form id="f2" 
+         >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 2" />
+    </form>
+
+    <form id="f3" 
+         >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 3" />
+    </form>
+
+    <form id="f4" 
+         >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 4" />
+    </form>
+
+    <form id="f5" 
+         >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 5" />
+    </form>
+
+    <form id="f6" 
+         >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 6" />
+    </form>
+
+    <form id="f7" 
+         >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 7" />
+    </form>
+
+    <form id="f8" 
+         >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 8" />
+    </form>
+
+    <form id="f9" 
+        action="" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 9" />
+    </form>
+
+    <form id="f10" 
+        action="" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 10" />
+    </form>
+
+    <form id="f11" 
+        action="" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 11" />
+    </form>
+
+    <form id="f12" 
+        action="" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 12" />
+    </form>
+
+    <form id="f13" 
+        action="" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 13" />
+    </form>
+
+    <form id="f14" 
+        action="" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 14" />
+    </form>
+
+    <form id="f15" 
+        action="" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 15" />
+    </form>
+
+    <form id="f16" 
+        action="" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 16" />
+    </form>
+
+    <form id="f17" 
+        action="foo" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 17" />
+    </form>
+
+    <form id="f18" 
+        action="foo" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 18" />
+    </form>
+
+    <form id="f19" 
+        action="foo" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 19" />
+    </form>
+
+    <form id="f20" 
+        action="foo" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 20" />
+    </form>
+
+    <form id="f21" 
+        action="foo" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 21" />
+    </form>
+
+    <form id="f22" 
+        action="foo" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 22" />
+    </form>
+
+    <form id="f23" 
+        action="foo" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 23" />
+    </form>
+
+    <form id="f24" 
+        action="foo" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 24" />
+    </form>
+
+    <form id="f25" 
+        action="/bar" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 25" />
+    </form>
+
+    <form id="f26" 
+        action="/bar" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 26" />
+    </form>
+
+    <form id="f27" 
+        action="/bar" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 27" />
+    </form>
+
+    <form id="f28" 
+        action="/bar" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 28" />
+    </form>
+
+    <form id="f29" 
+        action="/bar" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 29" />
+    </form>
+
+    <form id="f30" 
+        action="/bar" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 30" />
+    </form>
+
+    <form id="f31" 
+        action="/bar" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 31" />
+    </form>
+
+    <form id="f32" 
+        action="/bar" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 32" />
+    </form>
+
+    <form id="f33" 
+        action="http://example.com/bat" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 33" />
+    </form>
+
+    <form id="f34" 
+        action="http://example.com/bat" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 34" />
+    </form>
+
+    <form id="f35" 
+        action="http://example.com/bat" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 35" />
+    </form>
+
+    <form id="f36" 
+        action="http://example.com/bat" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 36" />
+    </form>
+
+    <form id="f37" 
+        action="http://example.com/bat" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 37" />
+    </form>
+
+    <form id="f38" 
+        action="http://example.com/bat" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 38" />
+    </form>
+
+    <form id="f39" 
+        action="http://example.com/bat" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 39" />
+    </form>
+
+    <form id="f40" 
+        action="http://example.com/bat" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 40" />
+    </form>
+
+    <form id="f41" 
+        action="https://example.com/quux" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 41" />
+    </form>
+
+    <form id="f42" 
+        action="https://example.com/quux" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 42" />
+    </form>
+
+    <form id="f43" 
+        action="https://example.com/quux" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 43" />
+    </form>
+
+    <form id="f44" 
+        action="https://example.com/quux" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 44" />
+    </form>
+
+    <form id="f45" 
+        action="https://example.com/quux" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 45" />
+    </form>
+
+    <form id="f46" 
+        action="https://example.com/quux" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 46" />
+    </form>
+
+    <form id="f47" 
+        action="https://example.com/quux" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 47" />
+    </form>
+
+    <form id="f48" 
+        action="https://example.com/quux" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 48" />
+    </form>
+
+    <form id="f49" 
+        action="ftp://example.com/quuux" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 49" />
+    </form>
+
+    <form id="f50" 
+        action="ftp://example.com/quuux" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 50" />
+    </form>
+
+    <form id="f51" 
+        action="ftp://example.com/quuux" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 51" />
+    </form>
+
+    <form id="f52" 
+        action="ftp://example.com/quuux" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 52" />
+    </form>
+
+    <form id="f53" 
+        action="ftp://example.com/quuux" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 53" />
+    </form>
+
+    <form id="f54" 
+        action="ftp://example.com/quuux" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 54" />
+    </form>
+
+    <form id="f55" 
+        action="ftp://example.com/quuux" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 55" />
+    </form>
+
+    <form id="f56" 
+        action="ftp://example.com/quuux" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 56" />
+    </form>
+
+    <form id="f57" method="get"
+         >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 57" />
+    </form>
+
+    <form id="f58" method="get"
+         >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 58" />
+    </form>
+
+    <form id="f59" method="get"
+         >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 59" />
+    </form>
+
+    <form id="f60" method="get"
+         >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 60" />
+    </form>
+
+    <form id="f61" method="get"
+         >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 61" />
+    </form>
+
+    <form id="f62" method="get"
+         >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 62" />
+    </form>
+
+    <form id="f63" method="get"
+         >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 63" />
+    </form>
+
+    <form id="f64" method="get"
+         >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 64" />
+    </form>
+
+    <form id="f65" method="get"
+        action="" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 65" />
+    </form>
+
+    <form id="f66" method="get"
+        action="" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 66" />
+    </form>
+
+    <form id="f67" method="get"
+        action="" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 67" />
+    </form>
+
+    <form id="f68" method="get"
+        action="" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 68" />
+    </form>
+
+    <form id="f69" method="get"
+        action="" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 69" />
+    </form>
+
+    <form id="f70" method="get"
+        action="" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 70" />
+    </form>
+
+    <form id="f71" method="get"
+        action="" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 71" />
+    </form>
+
+    <form id="f72" method="get"
+        action="" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 72" />
+    </form>
+
+    <form id="f73" method="get"
+        action="foo" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 73" />
+    </form>
+
+    <form id="f74" method="get"
+        action="foo" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 74" />
+    </form>
+
+    <form id="f75" method="get"
+        action="foo" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 75" />
+    </form>
+
+    <form id="f76" method="get"
+        action="foo" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 76" />
+    </form>
+
+    <form id="f77" method="get"
+        action="foo" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 77" />
+    </form>
+
+    <form id="f78" method="get"
+        action="foo" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 78" />
+    </form>
+
+    <form id="f79" method="get"
+        action="foo" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 79" />
+    </form>
+
+    <form id="f80" method="get"
+        action="foo" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 80" />
+    </form>
+
+    <form id="f81" method="get"
+        action="/bar" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 81" />
+    </form>
+
+    <form id="f82" method="get"
+        action="/bar" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 82" />
+    </form>
+
+    <form id="f83" method="get"
+        action="/bar" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 83" />
+    </form>
+
+    <form id="f84" method="get"
+        action="/bar" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 84" />
+    </form>
+
+    <form id="f85" method="get"
+        action="/bar" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 85" />
+    </form>
+
+    <form id="f86" method="get"
+        action="/bar" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 86" />
+    </form>
+
+    <form id="f87" method="get"
+        action="/bar" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 87" />
+    </form>
+
+    <form id="f88" method="get"
+        action="/bar" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 88" />
+    </form>
+
+    <form id="f89" method="get"
+        action="http://example.com/bat" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 89" />
+    </form>
+
+    <form id="f90" method="get"
+        action="http://example.com/bat" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 90" />
+    </form>
+
+    <form id="f91" method="get"
+        action="http://example.com/bat" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 91" />
+    </form>
+
+    <form id="f92" method="get"
+        action="http://example.com/bat" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 92" />
+    </form>
+
+    <form id="f93" method="get"
+        action="http://example.com/bat" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 93" />
+    </form>
+
+    <form id="f94" method="get"
+        action="http://example.com/bat" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 94" />
+    </form>
+
+    <form id="f95" method="get"
+        action="http://example.com/bat" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 95" />
+    </form>
+
+    <form id="f96" method="get"
+        action="http://example.com/bat" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 96" />
+    </form>
+
+    <form id="f97" method="get"
+        action="https://example.com/quux" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 97" />
+    </form>
+
+    <form id="f98" method="get"
+        action="https://example.com/quux" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 98" />
+    </form>
+
+    <form id="f99" method="get"
+        action="https://example.com/quux" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 99" />
+    </form>
+
+    <form id="f100" method="get"
+        action="https://example.com/quux" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 100" />
+    </form>
+
+    <form id="f101" method="get"
+        action="https://example.com/quux" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 101" />
+    </form>
+
+    <form id="f102" method="get"
+        action="https://example.com/quux" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 102" />
+    </form>
+
+    <form id="f103" method="get"
+        action="https://example.com/quux" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 103" />
+    </form>
+
+    <form id="f104" method="get"
+        action="https://example.com/quux" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 104" />
+    </form>
+
+    <form id="f105" method="get"
+        action="ftp://example.com/quuux" >
+        <input type="text" id="q" />
+        <input type="submit" value="Submit form 105" />
+    </form>
+
+    <form id="f106" method="get"
+        action="ftp://example.com/quuux" >
+        <input type="text" id="action" />
+        <input type="submit" value="Submit form 106" />
+    </form>
+
+    <form id="f107" method="get"
+        action="ftp://example.com/quuux" >
+        <input type="text" name="q" />
+        <input type="submit" value="Submit form 107" />
+    </form>
+
+    <form id="f108" method="get"
+        action="ftp://example.com/quuux" >
+        <input type="text" name="action" />
+        <input type="submit" value="Submit form 108" />
+    </form>
+
+    <form id="f109" method="get"
+        action="ftp://example.com/quuux" >
+        <input type="search" id="q" />
+        <input type="submit" value="Submit form 109" />
+    </form>
+
+    <form id="f110" method="get"
+        action="ftp://example.com/quuux" >
+        <input type="search" id="action" />
+        <input type="submit" value="Submit form 110" />
+    </form>
+
+    <form id="f111" method="get"
+        action="ftp://example.com/quuux" >
+        <input type="search" name="q" />
+        <input type="submit" value="Submit form 111" />
+    </form>
+
+    <form id="f112" method="get"
+        action="ftp://example.com/quuux" >
+        <input type="search" name="action" />
+        <input type="submit" value="Submit form 112" />
+    </form>
+
+</body>
+<!-- vi: set ts=4 sts=4 sw=4 et ai: -->
