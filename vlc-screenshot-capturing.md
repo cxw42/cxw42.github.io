@@ -5,6 +5,8 @@ By [cxw]/[Incline]
 ## Intro
 
 [Demozoo] is looking for screenshots of browser-based demoscene releases!
+This includes demos that run in browser environments such as
+[ShaderToy].
 You can capture your favorite moments in demos using the free [VLC] media
 player and recorder.  I will walk you through the capture process
 and show you how to upload the resulting images to Demozoo.
@@ -282,6 +284,7 @@ I am not affiliated with any of those parties.
 [Incline]: https://demozoo.org/groups/65997/
 [layernav.py]: https://raw.githubusercontent.com/cxw42/cxw42.github.io/master/layernav.py
 [menace]: https://demozoo.org/sceners/93/
+[ShaderToy]: https://shadertoy.com
 [VLC]: https://videolan.org/vlc/
 [Voltra]: https://files.scene.org/view/parties/2017/assembly17/1k/voltra_by_ribbon.zip
 [Vorteilspack]: https://demozoo.org/productions/272704/
