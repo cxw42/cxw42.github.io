@@ -1,0 +1,480 @@
+<html><head>
+<title>Capturing screenshots of browser-based demos using
+VLC</title>
+<style>
+/* Clearness, from https://raw.githubusercontent.com/volca/markdown-preview/master/theme/Clearness.css */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    margin: 10px 13px 10px 13px;
+}
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+@media screen and (min-width: 768px) {
+    body {
+        width: 748px;
+        margin:10px auto;
+    }
+}
+
+/*
+foundation.css
+Description: Foundation 4 docs style for highlight.js
+Author: Dan Allen <dan.j.allen@gmail.com>
+Website: http://foundation.zurb.com/docs/
+Version: 1.0
+Date: 2013-04-02
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #eee; color: black;
+}
+
+.hljs-link,
+.hljs-emphasis,
+.hljs-attribute,
+.hljs-addition {
+  color: #070;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong,
+.hljs-string,
+.hljs-deletion {
+  color: #d14;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-quote,
+.hljs-comment {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-section,
+.hljs-title {
+  color: #900;
+}
+
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #458;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #336699;
+}
+
+.hljs-bullet {
+  color: #997700;
+}
+
+.hljs-meta {
+  color: #3344bb;
+}
+
+.hljs-code,
+.hljs-number,
+.hljs-literal,
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #099;
+}
+
+.hljs-regexp {
+  background-color: #fff0ff;
+  color: #880088;
+}
+
+.hljs-symbol {
+  color: #990073;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #007700;
+}
+</style>
+</head>
+<body>
+<h1 id="capturing-screenshots-of-browser-based-demos-using-vlc">Capturing screenshots of browser-based demos using VLC</h1>
+<p>By <a href="https://demozoo.org/sceners/65996/">cxw</a>/<a href="https://demozoo.org/groups/65997/">Incline</a></p>
+<h2 id="intro">Intro</h2>
+<p><a href="https://demozoo.org">Demozoo</a> is looking for screenshots of browser-based demoscene releases!
+You can capture your favorite moments in demos using the free <a href="https://videolan.org/vlc/">VLC</a> media
+player and recorder.  I will walk you through the capture process
+and show you how to upload the resulting images to Demozoo.</p>
+<p>All of the programs I use can run on Linux, Mac, or Windows, and probably
+other Unix-like OSes.  I tested the steps for this article on Windows.</p>
+<p>There are a lot of steps, but they all take longer to describe than to
+actually do!  Remember: Demozoo <a href="https://demozoo.org/forums/7/">supports</a>
+high-res images and multiple screenshots, so you can go wild!</p>
+<h2 id="initial-setup">Initial setup</h2>
+<ol>
+<li><p>Download and install a desktop version of <a href="https://videolan.org/vlc/">VLC</a>.  It supports
+Windows, Mac, and Linux.  (I used VLC version 3.0.8.)</p>
+</li>
+<li><p>Open VLC.</p>
+</li>
+<li><p>On the <code>Tools</code> menu, select <code>Preferences</code>.</p>
+</li>
+<li><p>(see screenshot) (1) Click on <code>Hotkeys</code>,
+(2) type "snapshot" in the <code>Search</code> box,
+and make note of the "Global" hotkey for <code>Take video snapshot</code>.
+This is the key you will press while the demo is running to save a
+screenshot.  In my case, it is <code>Alt</code>+<code>F12</code>.</p>
+<p><img src="vlc-screenshot-capturing/preferences-hotkey.png" alt=""></p>
+</li>
+<li><p>Install at least two browsers.  Some demos only run on Chrome or only
+on Firefox, so have several available.</p>
+</li>
+<li><p>Install <a href="https://www.gimp.org/downloads/">GIMP</a>.  You will use it to bulk-crop the images in the
+"Post-processing" section, below.  If you already have a program
+that will crop multiple image files, you can skip this step.</p>
+</li>
+<li><p>Download the Export Layers GIMP plugin by khalim19 from
+<a href="https://github.com/khalim19/gimp-plugin-export-layers/releases/latest">here</a>.</p>
+</li>
+<li><p>Install the Export Layers GIMP plugin usingper the instructions
+<a href="https://khalim19.github.io/gimp-plugin-export-layers/sections/Installation.html">here</a>.</p>
+</li>
+<li><p>(Optional; recommended) Install my layernav plugin as described
+in "layernav.py", below.</p>
+</li>
+</ol>
+<h2 id="setting-up-to-vlc-capture-a-demo">Setting up to VLC capture a demo</h2>
+<ol>
+<li><p>Open VLC.</p>
+</li>
+<li><p>On the <code>Media</code> menu, select <code>Open Capture Device...</code>.</p>
+</li>
+<li><p>(see screenshot) (1) Select the <code>Capture Device</code> tab.
+(2) Change the <code>Capture mode</code> to <code>Desktop</code> (i.e., your screen).
+(3) Pick a frame rate for the capture.  Lower rates will make the demo
+perform better, but will make the screenshots lag the hotkey press.
+Start with 5 f/s (frames per second) and see if that works for you.
+(4) Click the downward-pointing arrow next to the <code>Play</code> button.
+(5) Choose <code>Enqueue</code> from the drop-down menu.</p>
+<p><img src="vlc-screenshot-capturing/open-desktop-capture.png" alt=""></p>
+</li>
+<li><p>You will see a <code>screen://</code> entry in your playlist.  When you are
+ready to go, you will double-click that entry to start capturing.</p>
+<p><img src="vlc-screenshot-capturing/screen-entry-in-playlist.png" alt=""></p>
+</li>
+</ol>
+<h2 id="setting-up-the-demo">Setting up the demo</h2>
+<p>Get the demo running on your PC!  This will vary by demo.</p>
+<ul>
+<li><a href="https://github.com/Gargaj/Conduit">Conduit</a> by Gargaj may help you with this.</li>
+<li>You can also check the <code>README</code> or <code>FILE_ID.DIZ</code> included with a
+demo to see what it runs on.  For example, <a href="https://files.scene.org/view/parties/2017/assembly17/1k/voltra_by_ribbon.zip">Voltra</a>'s <code>FILE_ID.DIZ</code>
+suggests Chromium and Edge.</li>
+</ul>
+<p><strong>Note</strong>: if you only have one monitor, make sure you can run the demo
+in windowed mode, not full-screen.  That will make it much easier to
+interact with VLC while the demo is running.</p>
+<p>You may need to change your browser settings to permit Web pages to
+auto-play sound in order for the demo to start.</p>
+<p>Once you are able to run the demo in one window, with VLC open in
+another window, you are ready to take screenshots.</p>
+<h2 id="capturing">Capturing!</h2>
+<ol>
+<li><p>Back in VLC, double-click the <code>screen://</code> entry.  You will see your
+desktop appear in VLC:</p>
+<p><img src="vlc-screenshot-capturing/every-demo-needs-a-tunnel.png" alt=""></p>
+</li>
+<li><p>Minimize VLC so you don't get an infinite tunnel :) .</p>
+</li>
+<li><p>Start the demo.</p>
+</li>
+<li><p>At — or just before — a part you want to take a
+screenshot of, hit the hotkey you noted above (<code>Alt</code>+<code>F12</code> for me).</p>
+<ul>
+<li>You will only get feedback in the VLC window, so you won't know
+that the capture has succeeded if VLC is minimized.  Don't worry:
+the image will still have been captured.</li>
+</ul>
+</li>
+<li><p>Hit the hotkey multiple times for as many screenshots as you want to take!</p>
+</li>
+<li><p>When the demo is over, go back to VLC.  Wait a few seconds to make
+sure it's finished processing screenshots, then hit the square Stop button
+at the bottom of the VLC window.</p>
+<ul>
+<li>You will know it's still processing if you see screenshot frames
+appearing in the upper-left corner of the image, or if you see
+text overlays like "vlcsnap.png".</li>
+</ul>
+</li>
+</ol>
+<h2 id="post-processing">Post-processing</h2>
+<p>If you have a multi-monitor system or ran the demo windowed, you will
+need to trim the screenshots to show just the demo content.  If you
+were able to run the demo in full-screen mode on a single monitor, you
+may be able to skip this section.</p>
+<ol>
+<li><p>Open GIMP.</p>
+</li>
+<li><p>On the <code>File</code> menu, select <code>Open as layers...</code>.</p>
+</li>
+<li><p>Navigate to the <code>Pictures</code> folder, or wherever VLC saves
+screenshots on your platform.</p>
+</li>
+<li><p>(see screenshot) Click the first <code>vlcsnap</code> file, scroll to the end,
+and shift-click the last <code>vlcsnap</code> file:</p>
+<p><img src="vlc-screenshot-capturing/open-as-layers.png" alt=""></p>
+<p>From this point, anytime you save a GIMP (<code>.xcf</code>) file, it will
+save all of your screenshots in that one file.</p>
+</li>
+<li><p>On the <code>Layers</code> menu, select <code>Stack</code>, then select
+<code>Reverse Layer Order</code> from the pop-out menu.  This will put the
+first screenshot first rather than last.</p>
+</li>
+<li><p>(see screenshot) (1) Click on the <code>Layers</code> tab to make the Layers
+pane visible.  (If you can't see the <code>Layers</code> tab, go to the
+<code>Windows</code> menu, select <code>Dockable Dialogs</code>, then select <code>Layers</code> in the
+pop-out menu.)  You will see all your <code>vlcsnap</code> files listed.
+(2) If any vlcsnaps aren't screenshots of the demo, or if you don't
+want to upload them, (2) click on them in the <code>Layers</code> box and
+(3) click the "X" to delete them.</p>
+<p><img src="vlc-screenshot-capturing/layers-pane.png" alt=""></p>
+<p>To see only one layer, (4) click on the eye icons on all the other
+layers to turn them off, so that only the layer you want to see has
+an eye icon visible.  For an easier way to navigate the layers,
+see "layernav.py", below.</p>
+</li>
+<li><p>(see screenshot) (1) Click on the rectangle-select tool in the
+toolbox.  (2) Draw a selection rectangle around the area of the
+demo.</p>
+<p><img src="vlc-screenshot-capturing/select-area.png" alt=""></p>
+<p>I recommend zooming in on the top-left corner, starting the
+selection, zooming out, moving the bottom-right corner of the
+selection close to where you want it, then zooming in to finish
+the bottom-right corner.  You can zoom with <code>Ctrl</code>+mouse wheel
+(on Windows).</p>
+<p>In GIMP, you can use Undo if you change the selection in a way you
+don't want.</p>
+</li>
+<li><p>On the <code>Image</code> menu, select <code>Crop to selection</code>.  That will crop
+all the screenshots (all the layers) at once.</p>
+</li>
+<li><p>On the <code>File</code> menu, select <code>Export Layers...</code>.</p>
+</li>
+<li><p>(see screenshot) (1) Click <code>Create Folder</code>.  (2) Give the folder a
+name.  I used the name of the demo (<a href="https://demozoo.org/productions/272704/">Vorteilspack</a>).  Hit Enter to
+create the folder.  Double-click on the folder to open it.
+(3) Click <code>Export</code>.</p>
+<p><img src="vlc-screenshot-capturing/export-layers-new-folder.png" alt=""></p>
+</li>
+<li><p>You will see an <code>Export Image as PNG</code> dialog.  Hit Export in that
+dialog.  You will see the progress bar at the bottom of the VLC
+window repeatedly fill while the images are exported.</p>
+<p><img src="vlc-screenshot-capturing/progress-bar.png" alt=""></p>
+</li>
+</ol>
+<h2 id="uploading-images-to-demozoo">Uploading images to Demozoo</h2>
+<p>Finally!</p>
+<ol>
+<li><p>In the browser, go to the page for the production you have
+screenshots for.</p>
+</li>
+<li><p>If there are no screenshots, click <code>Add one</code>:</p>
+<p><img src="vlc-screenshot-capturing/add-new-screenshot.png" alt=""></p>
+<p>Otherwise, click <code>Add screenshot</code> below the existing screenshots:</p>
+<p><img src="vlc-screenshot-capturing/add-addl-screenshot.png" alt=""></p>
+</li>
+<li><p>(see screenshot)
+(1) Click <code>Choose Files</code> and select your images.  Alternatively,
+drag and drop your images onto the <code>Choose Files</code> button.
+<strong>Note</strong>: the total file size should be under 10 megabytes.
+(2) You will see the number of files to be uploaded.
+Make sure it matches what you expect.
+(3) Click <code>Submit</code>.</p>
+<p><img src="vlc-screenshot-capturing/choose-files.png" alt=""></p>
+</li>
+<li><p>Wait for the upload!</p>
+<p><img src="vlc-screenshot-capturing/upload-progress.png" alt=""></p>
+<p>If you get a <code>413</code> error, try again with fewer files at once.
+I think the limit is 10M, but am not sure
+(<a href="https://demozoo.slack.com/archives/C0H2K05LP/p1577850433087700">question pending answer</a>).</p>
+<p><img src="vlc-screenshot-capturing/413.png" alt=""></p>
+</li>
+<li><p>Bask in the glory of the page with screenshots, and in the glow of
+the knowledge that you have helped the scene!</p>
+<p><img src="vlc-screenshot-capturing/done.png" alt=""></p>
+</li>
+</ol>
+<h2 id="addendum-layernavpy">Addendum: layernav.py</h2>
+<p>I wrote a GIMP plugin to make it easier to navigate between layers.
+To use it:</p>
+<h3 id="installation-one-time">Installation (one-time)</h3>
+<ol>
+<li><p>Download <a href="https://raw.githubusercontent.com/cxw42/cxw42.github.io/master/layernav.py">layernav.py</a></p>
+</li>
+<li><p>Copy layernav.py to your GIMP plugins directory.  For GIMP 2.8,
+that is probably <code>.gimp-2.8</code> in your home directory.  For GIMP
+2.10, it is probably :</p>
+<ul>
+<li>Linux or other Unix-like: <code>~/.config/GIMP/2.10/plug-ins</code></li>
+<li>Windows: <code>%APPDATA%\GIMP\2.10\plug-ins</code></li>
+<li>Mac: <code>~/Library/Application Support/GIMP/2.10/plug-ins</code></li>
+</ul>
+<p>This
+<a href="https://www.makeuseof.com/tag/install-gimp-plugins/">MakeUseOf article</a>
+(by Andy Betts) may help you.</p>
+</li>
+<li><p>Restart GIMP.</p>
+</li>
+<li><p>On the <code>Edit</code> menu, select <code>Keyboard Shortcuts</code>.</p>
+</li>
+<li><p>(see screenshot) (1) in the <code>Search</code> box, type "layernav".
+(2) Next to <code>Show next layer</code>, click on the word <code>Disabled</code>.
+Press a hotkey — I use <code>Ctrl</code>+<code>Shift</code>+<code>Page Down</code>.
+(3) Do the same for <code>Show previous layer</code>.
+I use <code>Ctrl</code>+<code>Shift</code>+<code>Page Up</code>.
+(4) Press <code>Close</code>.</p>
+<p><img src="vlc-screenshot-capturing/layernav-config.png" alt=""></p>
+</li>
+</ol>
+<h3 id="usage">Usage</h3>
+<p>When you have an image open, press the hotkeys you chose to navigate
+between layers.  If no layer is visible, the plugin will take you to
+the first layer.</p>
+<h2 id="legal">Legal</h2>
+<p>This article is copyright (c) 2019 cxw.  Please feel free to use and share
+it under the terms of the <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC 4.0 International</a> license.
+For the avoidance of doubt, merely using or sharing this document
+on a work computer does not inherently count as commercial use.
+But if your day job actually involves scening, please let me know so I
+can apply :) .</p>
+<h3 id="thanks-to">Thanks to</h3>
+<ul>
+<li>a <a href="https://pctonic.net/use-vlc-as-a-screen-recording-tool/">PC Tonic article</a>
+for helping me get started with capturing in VLC</li>
+<li>Alpha Coders for my
+<a href="https://wall.alphacoders.com/big.php?i=491120">desktop wallpaper</a>,
+by AlphaEdifice6083.</li>
+</ul>
+<p>I am not affiliated with any of those parties.</p>
+<ul>
+<li><a href="https://demozoo.org/sceners/93/">menace</a> for the opportunity to write this article!</li>
+</ul>
+</body>
+</html>
